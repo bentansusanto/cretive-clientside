@@ -66,6 +66,22 @@ export type FAQ = {
   answer: string[];
 };
 
+export type technology = {
+  icon: string;
+}
+
+export type WebTemplates = {
+  name_product: string;
+  slug: string;
+  category: string;
+  industri: string;
+  link: string;
+  linkUnduh: string;
+  tech:technology[];
+  description: string[];
+  thumbnail: string;
+}
+
 export interface HeroProps extends HeadlineProps {}
 
 export interface AboutProps extends HeadlineProps {
@@ -92,3 +108,5 @@ export interface FAQProps extends HeadlineProps {
 export interface CTAProps extends HeadlineProps {
   benefit: string[];
 }
+
+export interface TemplatesProps extends HeadlineProps {}

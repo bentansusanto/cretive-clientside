@@ -1,17 +1,11 @@
-import { Mobile } from '@/config/MediaQuery'
-import React from 'react'
+import Templates from "./Templates";
 
 const WebTemplate = () => {
-    const {isMobile, isTablet, isDesktop} = Mobile()
   return (
-    <div>
-        {
-            isMobile? (<></>) : 
-            isTablet? (<></>) : 
-            isDesktop && (<></>)
-        }
-    </div>
-  )
-}
+    <>
+      <Templates />
+    </>
+  );
+};
 
-export default WebTemplate
+export default WebTemplate;
