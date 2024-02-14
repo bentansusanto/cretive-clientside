@@ -10,6 +10,10 @@ body {
 
 input:checked ~ .dot {
   transform: translateX(100%);
-  background-color: #007EFF;
+  background-color: #007eff;
 }
 
+textarea,
+input {
+  @apply outline-none;
+}

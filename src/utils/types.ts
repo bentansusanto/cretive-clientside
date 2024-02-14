@@ -110,3 +110,6 @@ export interface CTAProps extends HeadlineProps {
 }
 
 export interface TemplatesProps extends HeadlineProps {}
+
+export interface CheckoutProps extends HeadlineProps {}
+

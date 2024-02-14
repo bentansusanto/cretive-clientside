@@ -1,12 +1,18 @@
 import { rupiah } from "@/config/Currency";
 import { Mobile } from "@/config/MediaQuery";
 import { dataPackage } from "@/libs/HomeData";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { GoCheckCircle } from "react-icons/go";
 
 const PackagesSection = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openPackage, setOpenPackage] = useState(false);
+  const router = useRouter()
+
+  const handleRoute = () => {
+    router.push('/checkout')
+  }
 
   const handleOpenPackage = () => {
     setOpenPackage(!openPackage);
@@ -231,7 +237,7 @@ const PackagesSection = () => {
                         </div>
                       ))}
                     </div>
-                    <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                    <button onClick={handleRoute} className="bg-blue-600 p-3 w-full rounded-md text-white">
                       Beli Sekarang
                     </button>
                   </div>
@@ -258,7 +264,7 @@ const PackagesSection = () => {
                         </div>
                       ))}
                     </div>
-                    <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                    <button onClick={handleRoute} className="bg-blue-600 p-3 w-full rounded-md text-white">
                       Beli Sekarang
                     </button>
                   </div>

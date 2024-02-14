@@ -208,12 +208,14 @@ const FAQSection = () => {
                       openSelectFAQ && "h-auto"
                     } bg-white transition-all ease-linear duration-300 p-5`}
                   >
-                    <div className="flex items-center justify-between">
+                    <div
+                      onClick={() => handleOpenFirstFAQ(idx)}
+                      className="flex items-center justify-between cursor-pointer"
+                    >
                       <p className="font-semibold text-[15px]">
                         {list.question}
                       </p>
                       <GoPlus
-                        onClick={() => handleOpenFirstFAQ(idx)}
                         className={`${
                           selectFirstFAQ === idx &&
                           !openSelectFAQ &&
@@ -244,12 +246,12 @@ const FAQSection = () => {
                       openSelectSecondFAQ && "h-auto"
                     } bg-white transition-all ease-linear duration-300 p-5`}
                   >
-                    <div className="flex items-center justify-between">
+                    <div onClick={() => handleOpenSecondFAQ(idx)} className="flex items-center justify-between cursor-pointer">
                       <p className="font-semibold text-[15px]">
                         {list.question}
                       </p>
                       <GoPlus
-                        onClick={() => handleOpenSecondFAQ(idx)}
+                        
                         className={`${
                           selectSecondFAQ === idx &&
                           !openSelectSecondFAQ &&

@@ -2,6 +2,7 @@ import { Mobile } from "@/config/MediaQuery";
 import {
   categoryWebTemplate,
   dataTemplates,
+  industriWebTemplate,
   webTemplates,
 } from "@/libs/WebTemplatesData";
 import Image from "next/image";
@@ -35,23 +36,29 @@ const Templates = () => {
               <div className="w-[65%]">
                 <div className="h-auto p-5 space-y-10 bg-[#fafafa] rounded-md">
                   {/* Category */}
-                  <ul className="space-y-2">
-                    {categoryWebTemplate.map((list, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
-                        <MdCheckBoxOutlineBlank className="text-xl" />
-                        <p className="text-[15px] text-gray-500">{list}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  {/* Category */}
-                  <ul className="space-y-2">
-                    {categoryWebTemplate.map((list, idx) => (
-                      <li key={idx} className="flex items-center space-x-2">
-                        <MdCheckBoxOutlineBlank className="text-xl" />
-                        <p className="text-[15px] text-gray-500">{list}</p>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-3">
+                    <p className="text-[16px] font-semibold">Category</p>
+                    <ul className="space-y-2">
+                      {categoryWebTemplate.map((list, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <MdCheckBoxOutlineBlank className="text-xl" />
+                          <p className="text-[15px] text-gray-500">{list}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Industri */}
+                  <div className="space-y-3">
+                    <p className="text-[16px] font-semibold">Industri</p>
+                    <ul className="space-y-2">
+                      {industriWebTemplate.map((list, idx) => (
+                        <li key={idx} className="flex items-center space-x-2">
+                          <MdCheckBoxOutlineBlank className="text-xl" />
+                          <p className="text-[15px] text-gray-500">{list}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
               {/* List Web Templates */}

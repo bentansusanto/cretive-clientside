@@ -1,6 +1,7 @@
 import { FootProps, NavProps } from "@/utils/types";
 
 export const navData: NavProps[] = [
+  {page: "Home", link: "/"},
   {page: "Why Choose Us", link: "#why-choose-us"},
   {page: "Portofolio", link: "#portofolio"},
   {page: "Testimoni", link: "#testimoni"},

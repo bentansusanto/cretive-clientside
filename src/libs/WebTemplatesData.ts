@@ -7,8 +7,6 @@ export const dataTemplates: TemplatesProps = {
     "Yuk, cek domainmu sekarang dan pilih paket website yang anda perlukan.",
 };
 
-
-
 export const webTemplates: WebTemplates[] = [
   {
     name_product: "UI Design",
@@ -72,4 +70,20 @@ export const webTemplates: WebTemplates[] = [
   },
 ];
 
-export const categoryWebTemplate = ["UI/UX", "Landingpage", "Web Company Profile", "Web Application"]
+export const categoryWebTemplate = [
+  "UI/UX",
+  "Landingpage",
+  "Web Company Profile",
+  "Web Application",
+];
+
+export const industriWebTemplate = [
+  "Travel",
+  "Hotel",
+  "Health",
+  "Hospital",
+  "E-Commerce",
+  "F&B",
+  "Voucher",
+  "Finance",
+];

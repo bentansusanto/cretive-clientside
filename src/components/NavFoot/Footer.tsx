@@ -9,7 +9,7 @@ const Footer = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const date = new Date().getFullYear();
   return (
-    <div className="mt-32">
+    <div className="mt-32 mb-8">
       {isMobile ? (
         <div className="space-y-10 mx-3">
           {/* Logo with Contact */}
