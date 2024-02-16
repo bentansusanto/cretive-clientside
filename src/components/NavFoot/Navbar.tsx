@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       {isMobile ? (
-        <div className="relative">
+        <div className="relative z-30">
           <div className="flex items-center justify-between px-5 py-4">
             <Link href={"/"}>
               <Image src={Logo} alt="logo-cretive" className="w-[70%]" />
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
           <ul
             className={` ${
-              open ? "h-auto top-16  px-3 py-5" : " opacity-10 -top-72"
+              open ? "h-auto top-16  px-3 py-5" : " opacity-10 -top-96"
             } bg-white space-y-10 w-full absolute transition-all ease-linear duration-300`}
           >
             {navData.map((list, idx) => (

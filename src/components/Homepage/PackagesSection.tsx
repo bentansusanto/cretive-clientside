@@ -8,11 +8,11 @@ import { GoCheckCircle } from "react-icons/go";
 const PackagesSection = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openPackage, setOpenPackage] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const handleRoute = () => {
-    router.push('/checkout')
-  }
+    router.push("/checkout");
+  };
 
   const handleOpenPackage = () => {
     setOpenPackage(!openPackage);
@@ -68,7 +68,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -95,7 +95,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -152,7 +152,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -179,7 +179,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-600 p-3 w-full rounded-md text-white">
+                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -217,6 +217,7 @@ const PackagesSection = () => {
               <p className="text-[15px]">Paket Maintenance</p>
             </div>
             {!openPackage ? (
+              // Paket
               <div className="flex items-center justify-center mt-16 space-x-10">
                 {dataPackage.package.map((list, idx) => (
                   <div
@@ -226,25 +227,30 @@ const PackagesSection = () => {
                     <p className="text-[15px] font-semibold">
                       {list.namePackage}
                     </p>
-                    <h4 className="text-3xl font-semibold text-[#007EFF]">
+                    <h4 className="text-2xl font-semibold text-[#007EFF]">
+                      {" "}
+                      {idx === 2 && <span className="text-2xl">Mulai </span>}
                       {rupiah(list.price)}
                     </h4>
                     <div className="space-y-3">
                       {list.benefit.map((list, idx) => (
                         <div key={idx} className="flex space-x-3">
-                          <GoCheckCircle className="text-xl text-[#00A995]" />
-                          <p className="text-[15px]">{list}</p>
+                          <GoCheckCircle className="text-2xl text-[#00A995]" />
+                          <p className="text-[15px] w-[80%]">{list}</p>
                         </div>
                       ))}
                     </div>
-                    <button onClick={handleRoute} className="bg-blue-600 p-3 w-full rounded-md text-white">
+                    <button
+                      onClick={handleRoute}
+                      className="bg-blue-800 p-3 w-full rounded-md text-white"
+                    >
                       Beli Sekarang
                     </button>
                   </div>
                 ))}
               </div>
             ) : (
-                <div className="flex items-center justify-center mt-16 space-x-10">
+              <div className="flex items-center justify-center mt-16 space-x-10">
                 {dataPackage.maintenance.map((list, idx) => (
                   <div
                     key={idx}
@@ -260,11 +266,14 @@ const PackagesSection = () => {
                       {list.benefit.map((list, idx) => (
                         <div key={idx} className="flex space-x-3">
                           <GoCheckCircle className="text-xl text-[#00A995]" />
-                          <p className="text-[15px]">{list}</p>
+                          <p className="text-[15px] w-[80%]">{list}</p>
                         </div>
                       ))}
                     </div>
-                    <button onClick={handleRoute} className="bg-blue-600 p-3 w-full rounded-md text-white">
+                    <button
+                      onClick={handleRoute}
+                      className="bg-blue-800 p-3 w-full rounded-md text-white"
+                    >
                       Beli Sekarang
                     </button>
                   </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { footData } from "@/libs/NavFootData";
 import { link } from "fs";
 import Link from "next/link";
+import Whatsapp from "./Whatsapp";
 
 const Footer = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
@@ -11,7 +12,7 @@ const Footer = () => {
   return (
     <div className="mt-32 mb-8">
       {isMobile ? (
-        <div className="space-y-10 mx-3">
+        <div className="space-y-10 mx-5">
           {/* Logo with Contact */}
           <div className="space-y-3">
             <Image
@@ -76,6 +77,9 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
+          </div>
+          <div className="fixed bottom-5 right-5">
+            <Whatsapp />
           </div>
         </div>
       ) : isTablet ? (
@@ -145,6 +149,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+          <div className="fixed bottom-10 right-10">
+            <Whatsapp />
+          </div>
         </div>
       ) : (
         isDesktop && (
@@ -213,6 +220,9 @@ const Footer = () => {
                   ))}
                 </ul>
               </div>
+            </div>
+            <div className="fixed bottom-10 right-10">
+              <Whatsapp />
             </div>
           </div>
         )

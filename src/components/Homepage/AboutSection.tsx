@@ -89,7 +89,7 @@ const AboutSection = () => {
             {/* List Services */}
             <div className="grid grid-cols-4 gap-8 mt-16">
               {dataAbout.service.map((list, idx) => (
-                <div key={idx} className="bg-[#EEEEEE] space-y-4 p-5">
+                <div key={idx} className="bg-gray-50 space-y-4 p-5">
                   <Image
                     src={require("@/assets/icon/" + list.icon)}
                     alt={list.icon}

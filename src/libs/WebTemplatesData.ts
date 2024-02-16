@@ -12,7 +12,7 @@ export const webTemplates: WebTemplates[] = [
     name_product: "UI Design",
     slug: "ui-design",
     category: "UI/UX",
-    industri: "medical",
+    product: "medical",
     link: "https://instagram.com",
     linkUnduh: "https://instagram.com",
     tech: [
@@ -27,7 +27,7 @@ export const webTemplates: WebTemplates[] = [
     name_product: "UI Design",
     slug: "ui-design",
     category: "UI/UX",
-    industri: "medical",
+    product: "medical",
     link: "https://instagram.com",
     linkUnduh: "https://instagram.com",
     tech: [
@@ -42,7 +42,7 @@ export const webTemplates: WebTemplates[] = [
     name_product: "UI Design",
     slug: "ui-design",
     category: "UI/UX",
-    industri: "medical",
+    product: "medical",
     link: "https://instagram.com",
     linkUnduh: "https://instagram.com",
     tech: [
@@ -57,7 +57,52 @@ export const webTemplates: WebTemplates[] = [
     name_product: "UI Design",
     slug: "ui-design",
     category: "UI/UX",
-    industri: "medical",
+    product: "medical",
+    link: "https://instagram.com",
+    linkUnduh: "https://instagram.com",
+    tech: [
+      {
+        icon: "",
+      },
+    ],
+    description: ["", ""],
+    thumbnail: "Medcraft-Clinic.webp",
+  },
+  {
+    name_product: "UI Design",
+    slug: "ui-design",
+    category: "UI/UX",
+    product: "medical",
+    link: "https://instagram.com",
+    linkUnduh: "https://instagram.com",
+    tech: [
+      {
+        icon: "",
+      },
+    ],
+    description: ["", ""],
+    thumbnail: "Medcraft-Clinic.webp",
+  },
+  {
+    name_product: "UI Design",
+    slug: "ui-design",
+    category: "UI/UX",
+    product: "medical",
+    link: "https://instagram.com",
+    linkUnduh: "https://instagram.com",
+    tech: [
+      {
+        icon: "",
+      },
+    ],
+    description: ["", ""],
+    thumbnail: "Medcraft-Clinic.webp",
+  },
+  {
+    name_product: "UI Design",
+    slug: "ui-design",
+    category: "UI/UX",
+    product: "medical",
     link: "https://instagram.com",
     linkUnduh: "https://instagram.com",
     tech: [
@@ -77,8 +122,9 @@ export const categoryWebTemplate = [
   "Web Application",
 ];
 
-export const industriWebTemplate = [
+export const productWebTemplate = [
   "Travel",
+  "Education",
   "Hotel",
   "Health",
   "Hospital",
@@ -86,4 +132,6 @@ export const industriWebTemplate = [
   "F&B",
   "Voucher",
   "Finance",
+  "Dashboard",
+  "SaaS",
 ];

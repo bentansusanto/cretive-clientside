@@ -5,7 +5,7 @@ export const navData: NavProps[] = [
   {page: "Why Choose Us", link: "#why-choose-us"},
   {page: "Portofolio", link: "#portofolio"},
   {page: "Testimoni", link: "#testimoni"},
-  {page: "Web Templates", link: "/web-templates"},
+  // {page: "Web Templates", link: "/web-templates"},
   {page: "FAQ", link: "#faq"},
 ];
 

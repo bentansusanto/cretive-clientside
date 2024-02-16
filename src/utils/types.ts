@@ -10,18 +10,18 @@ export type NavProps = {
 };
 
 export type socialMedia = {
-    name: string;
-    link: string;
-}
+  name: string;
+  link: string;
+};
 
 export type FootProps = {
-    logo: string;
-    quicklink: NavProps[];
-    contact: string[];
-    webTemplate: string[];
-    package: string[];
-    socialM: socialMedia[];
-}
+  logo: string;
+  quicklink: NavProps[];
+  contact: string[];
+  webTemplate: string[];
+  package: string[];
+  socialM: socialMedia[];
+};
 
 interface HeadlineProps {
   subtitle?: string;
@@ -68,19 +68,19 @@ export type FAQ = {
 
 export type technology = {
   icon: string;
-}
+};
 
 export type WebTemplates = {
   name_product: string;
   slug: string;
   category: string;
-  industri: string;
+  product: string;
   link: string;
   linkUnduh: string;
-  tech:technology[];
+  tech: technology[];
   description: string[];
   thumbnail: string;
-}
+};
 
 export interface HeroProps extends HeadlineProps {}
 
@@ -112,4 +112,3 @@ export interface CTAProps extends HeadlineProps {
 export interface TemplatesProps extends HeadlineProps {}
 
 export interface CheckoutProps extends HeadlineProps {}
-
