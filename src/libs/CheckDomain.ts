@@ -1,8 +1,6 @@
 const checkDomain = async (domain: string): Promise<boolean | null> => {
     try {
-      const apiKey = process.env.API_KEY || '691eabb87dea48cbad24040492033361';
-      const apiUrl = process.env.API_URL || `https://api.whoisfreaks.com/v1.0/domain/availability?apiKey=${apiKey}&domain=${domain}`;
-
+      const apiUrl = `/api/domainChecker?domainName=${domain}`;
 
       const response = await fetch(apiUrl);
 
@@ -11,8 +9,7 @@ const checkDomain = async (domain: string): Promise<boolean | null> => {
       }
 
       const data = await response.json();
-      console.log(data.domainAvailability)
-      return data.domainAvailability;
+      return data.dataCheck;
     } catch (error) {
       console.error('Error fetching data:', error);
       return null;
