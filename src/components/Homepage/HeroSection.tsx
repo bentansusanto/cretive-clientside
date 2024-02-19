@@ -1,8 +1,9 @@
 import { Mobile } from "@/config/MediaQuery";
 import checkDomain from "@/libs/CheckDomain";
+
 import { dataHero } from "@/libs/HomeData";
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { GoCheckCircle } from "react-icons/go";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
@@ -43,9 +44,7 @@ const HeroSection = () => {
         Congratulations, you can use it
       </p>
     ) : availability === false ? (
-      <p className="text-[12px] text-red-500">
-        Sorry domain unavailable 
-      </p>
+      <p className="text-[12px] text-red-500">Sorry domain unavailable</p>
     ) : (
       error && (
         <p className="text-[12px] text-red-500">Please input after 60 second</p>
@@ -62,6 +61,7 @@ const HeroSection = () => {
       setDomainError("");
     }
   };
+
 
   return (
     <div>
@@ -262,5 +262,16 @@ const HeroSection = () => {
     </div>
   );
 };
+
+// export const getServerSideProps = async (context: any) => {
+//   // Get IP address from the request
+//   const ipAddress = context.req.headers['x-forwarded-for'] || context.req.connection.remoteAddress;
+  
+//   return {
+//     props: {
+//       ipAddress,
+//     },
+//   };
+// };
 
 export default HeroSection;

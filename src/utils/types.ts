@@ -43,14 +43,16 @@ type Portofolio = {
 };
 
 type PackagesWeb = {
+  id: string;
   namePackage: string;
-  price: number;
+  price: number | any;
   benefit: string[];
 };
 
 type MaintenanceWeb = {
+  id: string;
   namePackage: string;
-  price: number;
+  price: number | any;
   benefit: string[];
 };
 
@@ -112,3 +114,29 @@ export interface CTAProps extends HeadlineProps {
 export interface TemplatesProps extends HeadlineProps {}
 
 export interface CheckoutProps extends HeadlineProps {}
+
+export type TrackPurchase = {
+  value: string | number;
+  currency: string;
+};
+
+export type TrackAddToCart = {
+  content_id: string;
+  content_name: string;
+  content_type: string;
+  value: number | string;
+  currency: string;
+};
+
+export type TrackLeads = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+};
+
+export type PaymentMethod = {
+    id: string;
+    bankName: string;
+    noRek: string;
+    name: string;
+}

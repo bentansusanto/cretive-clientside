@@ -1,10 +1,30 @@
+import { rupiah } from "@/config/Currency";
 import { Mobile } from "@/config/MediaQuery";
-import React from "react";
 import { dataCheckout } from "@/libs/CheckoutData";
+import { dataPackage } from "@/libs/HomeData";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 
 const CheckoutPackage = () => {
+  const router = useRouter();
+  const { productId } = router.query;
+  const packageData = dataPackage.package.find(
+    (p: { id: string }) => p.id === productId
+  );
+  const [name, setName] = useState("");
   const { isMobile, isTablet, isDesktop } = Mobile();
+
+  useEffect(() => {
+    if (packageData?.namePackage) {
+      setName(packageData.namePackage as string);
+    }
+  }, [packageData]);
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
   return (
     <div>
       {isMobile ? (
@@ -19,7 +39,11 @@ const CheckoutPackage = () => {
           </div>
           <div className="space-y-5">
             <div className="block">
-              <div className="sticky top-5 bg-gray-200 w-[100%] h-52"></div>
+              <div className="sticky space-y-5 top-5 bg-gray-100 w-[100%] h-52">
+                <p className="text-[15px] font-semibold text-white">
+                  {packageData?.namePackage}
+                </p>
+              </div>
             </div>
             <div className="bg-gray-200 rounded-md p-5">
               <h4 className="text-md font-semibold">Form Checkout</h4>
@@ -272,7 +296,11 @@ const CheckoutPackage = () => {
             </div>
             <div className="flex space-x-20">
               <div className="block">
-                <div className="sticky top-5 bg-gray-400 w-96 h-52"></div>
+                <div className="sticky top-5 bg-gray-400 w-96 h-52">
+                  <p className="text-[15px] font-semibold text-white">
+                    {packageData?.namePackage}
+                  </p>
+                </div>
               </div>
               <div className="bg-white shadow-md rounded-md p-5">
                 <h4 className="text-md font-semibold">Form Checkout</h4>
@@ -314,7 +342,8 @@ const CheckoutPackage = () => {
                           Packages
                         </label>
                         <input
-                          type="text"
+                          value={name}
+                          onChange={handleNameChange}
                           placeholder="Enter your package"
                           className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
                         />
@@ -375,10 +404,12 @@ const CheckoutPackage = () => {
                     </div>
                     <button
                       type="submit"
-                      className="flex items-center justify-between w-full text-white bg-blue-800 p-3 rounded-md"
+                      className={`${packageData?.namePackage !== 'Web Application'&& "flex items-center justify-between"} w-full text-white bg-blue-800 p-3 rounded-md`}
                     >
-                      <p className="text-[16px] font-semibold">Rp 599.900</p>
-                      <p className="text-[16px] font-semibold">Checkout</p>
+                      <p className="text-[16px] font-semibold">
+                        {packageData?.namePackage === 'Web Application' ? null : rupiah(packageData?.price)}
+                      </p>
+                      <p className="text-[16px] font-semibold">{packageData?.namePackage === 'Web Application' ? "Konsultasi Sekarang" : "Checkout"}</p>
                     </button>
                   </form>
                 </div>

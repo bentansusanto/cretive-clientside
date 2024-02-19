@@ -8,6 +8,8 @@ import {
   TestimoniProps,
 } from "@/utils/types";
 
+import { generateCustomId } from "@/config/GenerateId";
+
 export const dataHero: HeroProps = {
   title: "Tingkatkan Pelanggan Dengan Cepat, Tanpa Ribet!",
   description:
@@ -81,6 +83,7 @@ export const dataPackage: PackageProps = {
   title: "Pilih Paket yang Cocok Buatmu!",
   package: [
     {
+      id: generateCustomId(),
       namePackage: "Landingpage",
       price: 599900,
       benefit: [
@@ -98,6 +101,7 @@ export const dataPackage: PackageProps = {
       ],
     },
     {
+      id: generateCustomId(),
       namePackage: "Web Company Profile",
       price: 1999900,
       benefit: [
@@ -115,6 +119,7 @@ export const dataPackage: PackageProps = {
       ],
     },
     {
+      id: generateCustomId(),
       namePackage: "Web Application",
       price: 9900000,
       benefit: [
@@ -134,6 +139,7 @@ export const dataPackage: PackageProps = {
   ],
   maintenance: [
     {
+      id: generateCustomId(),
       namePackage: "Maintenance Landingpage",
       price: 150000,
       benefit: [
@@ -144,6 +150,7 @@ export const dataPackage: PackageProps = {
       ],
     },
     {
+      id: generateCustomId(),
       namePackage: "Maintenance Web Company Profile",
       price: 600000,
       benefit: [
@@ -154,6 +161,7 @@ export const dataPackage: PackageProps = {
       ],
     },
     {
+      id: generateCustomId(),
       namePackage: "Maintenance Web Appliication",
       price: 5000000,
       benefit: [

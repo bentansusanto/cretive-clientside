@@ -5,18 +5,20 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { GoCheckCircle } from "react-icons/go";
 
+
 const PackagesSection = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openPackage, setOpenPackage] = useState(false);
   const router = useRouter();
 
-  const handleRoute = () => {
-    router.push("/checkout");
+  const handleRoute = (id: string) => {
+    router.push(`/checkout?productId=${id}`);
   };
 
   const handleOpenPackage = () => {
     setOpenPackage(!openPackage);
   };
+
   return (
     <div className="mt-32" id="package">
       {isMobile ? (
@@ -241,7 +243,7 @@ const PackagesSection = () => {
                       ))}
                     </div>
                     <button
-                      onClick={handleRoute}
+                      onClick={() => handleRoute(list.id)}
                       className="bg-[#0049A5] p-3 w-full rounded-md text-white"
                     >
                       Beli Sekarang
@@ -271,7 +273,7 @@ const PackagesSection = () => {
                       ))}
                     </div>
                     <button
-                      onClick={handleRoute}
+                      onClick={() => handleRoute(list.id)}
                       className="bg-[#0049A5] p-3 w-full rounded-md text-white"
                     >
                       Beli Sekarang
