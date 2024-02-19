@@ -66,12 +66,12 @@ export const dataPortofolio: PortoProps = {
     {
       thumbnail: "Website-Disorder.webp",
       namePorto: "Website Disorder",
-      link: "https://softorgin.com/medcraft-clinic",
+      link: "https://web-ssad.vercel.app",
     },
     {
       thumbnail: "Website-Nexsvibe.webp",
       namePorto: "Website Nexsvibe",
-      link: "https://softorgin.com/medcraft-clinic",
+      link: "",
     },
   ],
 };
