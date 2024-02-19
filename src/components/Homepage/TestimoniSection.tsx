@@ -31,7 +31,7 @@ const TestimoniSection = () => {
               {dataTestimoni.description}
             </p>
             <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-              Konsultasi Sekarang
+              Order Sekarang
             </button>
           </div>
           <div className="flex justify-center items-center space-x-5">
@@ -96,7 +96,7 @@ const TestimoniSection = () => {
               {dataTestimoni.description}
             </p>
             <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-              Konsultasi Sekarang
+              Order Sekarang
             </button>
           </div>
           <div className="flex justify-center items-center space-x-5">
@@ -162,7 +162,7 @@ const TestimoniSection = () => {
                 {dataTestimoni.description}
               </p>
               <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-                Lihat Paket
+                Order Sekarang
               </button>
             </div>
             <div className="flex items-center space-x-5">

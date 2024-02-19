@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { navData } from "@/libs/NavFootData";
-import { Mobile } from "@/config/MediaQuery";
-import Link from "next/link";
-import Image from "next/image";
 import Logo from "@/assets/images/logo-cretive-agency.svg";
+import { Mobile } from "@/config/MediaQuery";
+import { navData } from "@/libs/NavFootData";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoCloseOutline } from "react-icons/io5";
 
@@ -42,14 +42,20 @@ const Navbar = () => {
           </div>
           <ul
             className={` ${
-              open ? "h-auto top-16  px-3 py-5" : " opacity-10 -top-96"
-            } bg-white space-y-10 w-full absolute transition-all ease-linear duration-300`}
+              open ? "h-auto top-16  px-3 py-5" : " opacity-10 -top-[60vh]"
+            } bg-white space-y-8 w-full absolute transition-all ease-linear duration-500`}
           >
             {navData.map((list, idx) => (
-              <li key={idx} className="text-[15px] hover:text-blue-500">
+              <li
+                key={idx}
+                className="text-[15px] hover:text-blue-500 hover:bg-gray-100 p-3"
+              >
                 <Link href={list.link}>{list.page}</Link>
               </li>
             ))}
+            <button className="bg-[#0049A5] w-full px-5 py-3 text-white text-[15px] rounded-lg">
+              Order Sekarang
+            </button>
           </ul>
         </div>
       ) : isTablet ? (
@@ -64,6 +70,9 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <button className="bg-[#0049A5] px-5 py-2.5 text-white text-[14px] rounded-lg">
+            Order Sekarang
+          </button>
         </div>
       ) : (
         isDesktop && (
@@ -78,6 +87,9 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+            <button className="bg-[#0049A5] px-5 py-3 text-white text-[15px] rounded-lg">
+              Order Sekarang
+            </button>
           </div>
         )
       )}

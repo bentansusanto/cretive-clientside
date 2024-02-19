@@ -11,7 +11,7 @@ export default async function handler(
     const domainName = req.query.domainName as string;
 
     const response = await fetch(
-      `${apiURL}?apiKey=${apiKey}&domain=${domainName}&sug=true&count=10`
+      `${apiURL}?apiKey=${apiKey}&domain=${domainName}`
     );
 
     if (!response.ok) {

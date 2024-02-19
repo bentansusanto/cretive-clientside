@@ -68,7 +68,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
+                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -152,7 +152,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
+                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -179,7 +179,7 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
+                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
                     Beli Sekarang
                   </button>
                 </div>
@@ -242,7 +242,7 @@ const PackagesSection = () => {
                     </div>
                     <button
                       onClick={handleRoute}
-                      className="bg-blue-800 p-3 w-full rounded-md text-white"
+                      className="bg-[#0049A5] p-3 w-full rounded-md text-white"
                     >
                       Beli Sekarang
                     </button>
@@ -272,7 +272,7 @@ const PackagesSection = () => {
                     </div>
                     <button
                       onClick={handleRoute}
-                      className="bg-blue-800 p-3 w-full rounded-md text-white"
+                      className="bg-[#0049A5] p-3 w-full rounded-md text-white"
                     >
                       Beli Sekarang
                     </button>

@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
             {/* Web Templates */}
             <div className="space-y-3">
-              <p className="font-semibold">Package</p>
+              <p className="font-semibold">Web Templates</p>
               <ul className="space-y-3">
                 {footData.webTemplate.map((list, idx) => (
                   <li key={idx} className="text-gray-500">
@@ -125,7 +125,7 @@ const Footer = () => {
             </div>
             {/* Web Templates */}
             <div className="space-y-3">
-              <p className="font-semibold">Package</p>
+              <p className="font-semibold">Web Templates</p>
               <ul className="space-y-3">
                 {footData.webTemplate.map((list, idx) => (
                   <li key={idx} className="text-gray-500">
@@ -197,7 +197,7 @@ const Footer = () => {
               </div>
               {/* Web Templates */}
               <div className="space-y-3">
-                <p className="font-semibold">Package</p>
+                <p className="font-semibold">Web Templates</p>
                 <ul className="space-y-3">
                   {footData.webTemplate.map((list, idx) => (
                     <li key={idx} className="text-gray-500">

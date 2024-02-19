@@ -54,23 +54,23 @@ export const dataPortofolio: PortoProps = {
       link: "https://softorgin.com/medcraft-clinic",
     },
     {
-      thumbnail: "Medcraft-Clinic.webp",
-      namePorto: "Medcraft Clinic",
+      thumbnail: "Revact.webp",
+      namePorto: "Revact",
+      link: "https://softorgin.com/revact",
+    },
+    {
+      thumbnail: "Landingpage-go-rekber.webp",
+      namePorto: "Go Rekber",
+      link: "https://softorgin.com/go-rekber",
+    },
+    {
+      thumbnail: "Website-Disorder.webp",
+      namePorto: "Website Disorder",
       link: "https://softorgin.com/medcraft-clinic",
     },
     {
-      thumbnail: "Medcraft-Clinic.webp",
-      namePorto: "Medcraft Clinic",
-      link: "https://softorgin.com/medcraft-clinic",
-    },
-    {
-      thumbnail: "Medcraft-Clinic.webp",
-      namePorto: "Medcraft Clinic",
-      link: "https://softorgin.com/medcraft-clinic",
-    },
-    {
-      thumbnail: "Medcraft-Clinic.webp",
-      namePorto: "Medcraft Clinic",
+      thumbnail: "Website-Nexsvibe.webp",
+      namePorto: "Website Nexsvibe",
       link: "https://softorgin.com/medcraft-clinic",
     },
   ],
@@ -168,7 +168,7 @@ export const dataPackage: PackageProps = {
 
 export const dataTestimoni: TestimoniProps = {
   subtitle: "What They Say",
-  title: "Kata Mereka Dengan Hasil dari Cretive.",
+  title: "Kata Mereka Dengan Hasil dari Evocq.",
   description:
     "Kami bukan hanya sekadar pembuat website, kami juga  harus memahami bahwa setiap bisnis unik dan memiliki kebutuhan khusus. ",
   testimoni: [
