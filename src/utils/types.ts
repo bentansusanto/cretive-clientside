@@ -118,18 +118,14 @@ export interface TemplatesProps extends HeadlineProps {}
 
 export interface CheckoutProps extends HeadlineProps {}
 
-export type TrackPurchase = {
-  value: string | number;
-  currency: string;
-};
-
-export type TrackAddToCart = {
+interface AddToCartParams {
   content_id: string;
   content_name: string;
   content_type: string;
   value: number | string;
   currency: string;
 };
+export type TrackAddToCart = (params: AddToCartParams) => void;
 
 export type TrackLeads = {
   name: string;

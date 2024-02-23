@@ -12,6 +12,7 @@ import { GoCheckCircle } from "react-icons/go";
 import { TbReload } from "react-icons/tb";
 import { PiTimerBold } from "react-icons/pi";
 import CheckoutPopUp from "./CheckoutPopUp";
+import FacebookPixel from "@/libs/FacebookPixel";
 
 
 const CheckoutPackage = () => {
@@ -20,6 +21,7 @@ const CheckoutPackage = () => {
   const packageData = dataPackage.package.find(
     (p: { id: string }) => p.id === productId
   );
+  const facebookPixel = FacebookPixel()
   const [namePackages, setNamePackages] = useState("");
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openStruckPayment, setOpenStruckPayment] = useState<boolean>(false);
@@ -113,6 +115,7 @@ const CheckoutPackage = () => {
           prdLink || "Tidak ada"
         }\n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n Total Pembayaran: ${packagesPrice}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
       }
+      facebookPixel(packageData?.price, "IDR")
       const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
         message
       )}`;

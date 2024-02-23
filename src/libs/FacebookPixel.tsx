@@ -1,6 +1,5 @@
-import { TrackPurchase } from "@/utils/types";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const FacebookPixel = () => {
   const router = useRouter();
@@ -50,15 +49,15 @@ const FacebookPixel = () => {
   }, [router, fbPixel]);
 
   // Function to track Purchase event
-  const trackPurchase = ({ value, currency }: TrackPurchase) => {
+  const trackPurchase = ( value:any, currency:string) => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
         ReactPixel.track("Purchase", { value, currency });
       });
   };
-
-  return null;
+  return trackPurchase;
 };
 
 export default FacebookPixel;
+
