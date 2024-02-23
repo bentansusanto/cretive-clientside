@@ -85,9 +85,12 @@ export const dataPackage: PackageProps = {
     {
       id: generateCustomId(),
       namePackage: "Landingpage",
+      desc: "Landingpage sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas",
+      revision: "Unlimited Revisi",
+      duration: "7 hari pengerjaan",
       price: 599900,
       benefit: [
-        "Pengerjaan 1 minggu",
+        "Pengerjaan 7 hari",
         "Unlimited Revisi",
         "Free SSL Certficate",
         "Free Domain dan Hosting 1 tahun (.com, my.id)",
@@ -103,6 +106,9 @@ export const dataPackage: PackageProps = {
     {
       id: generateCustomId(),
       namePackage: "Web Company Profile",
+      desc: "Web Company Profile sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas.",
+      revision: "Unlimited Revisi",
+      duration: "15 hari",
       price: 1999900,
       benefit: [
         "Pengerjaan 15 hari",
@@ -121,6 +127,9 @@ export const dataPackage: PackageProps = {
     {
       id: generateCustomId(),
       namePackage: "Web Application",
+      desc: "Web Application sangat cocok untuk melakukan pemasaran, pemesanan otomatis, dan membuat sistem otomatis",
+      revision: "3x Revisi",
+      duration: "1 - 3 Bulan",
       price: 9900000,
       benefit: [
         "Pengerjaan 1 - 3 bulan",

@@ -45,6 +45,9 @@ type Portofolio = {
 type PackagesWeb = {
   id: string;
   namePackage: string;
+  desc: string;
+  duration: string;
+  revision: string;
   price: number | any;
   benefit: string[];
 };
@@ -135,8 +138,18 @@ export type TrackLeads = {
 };
 
 export type PaymentMethod = {
-    id: string;
-    bankName: string;
-    noRek: string;
-    name: string;
-}
+  id: string;
+  bankName: string;
+  noRek: string;
+  nameOwner: string;
+};
+
+export type DataCheckout = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  companyName: string;
+  industri: string;
+  needs: string;
+  prdLink?: string;
+};
