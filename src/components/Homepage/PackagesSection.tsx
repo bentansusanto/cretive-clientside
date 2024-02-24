@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { GoCheckCircle } from "react-icons/go";
 
-
 const PackagesSection = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openPackage, setOpenPackage] = useState(false);
@@ -70,7 +69,10 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
+                  <button
+                    onClick={() => handleRoute(list.id)}
+                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                  >
                     Beli Sekarang
                   </button>
                 </div>
@@ -154,7 +156,10 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
+                  <button
+                    onClick={() => handleRoute(list.id)}
+                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                  >
                     Beli Sekarang
                   </button>
                 </div>

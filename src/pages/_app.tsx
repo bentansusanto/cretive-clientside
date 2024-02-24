@@ -1,4 +1,3 @@
-import FacebookPixel from "@/libs/FacebookPixel";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
@@ -17,7 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/logo-cretive-agency.svg" />
       </Head>
-      <FacebookPixel />
       <Component {...pageProps} />
     </>
   );

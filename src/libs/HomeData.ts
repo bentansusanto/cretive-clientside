@@ -255,10 +255,9 @@ export const dataFAQ: FAQProps = {
     {
       question: "Bagaimana sistem pembayaran paket website ?",
       answer: [
-        "Kami menggunakan 2 - 3 kali pembayaran",
-        "Paket landingpage dan website company profile pembayaran dilakukan 2 kali",
+        "Paket landingpage dan website company profile pembayaran dilakukan 1 kali",
         "Paket Web Application pembayaran dilakukan 3 kali",
-        "Sebelum melakukan pembayaran kami akan mengirimkan surat perjanjian kerjasama(dikirimkan dipembayaran pertama) dan juga invoice pembayaran.",
+        "Sebelum melakukan pembayaran kami akan mengirimkan surat perjanjian kerjasama(dikirimkan setelah pembayaran pertama)",
       ],
     },
     {

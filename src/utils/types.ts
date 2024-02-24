@@ -42,7 +42,7 @@ type Portofolio = {
   link: string;
 };
 
-type PackagesWeb = {
+export type PackagesWeb = {
   id: string;
   namePackage: string;
   desc: string;
@@ -125,7 +125,6 @@ interface AddToCartParams {
   value: number | string;
   currency: string;
 };
-export type TrackAddToCart = (params: AddToCartParams) => void;
 
 export type TrackLeads = {
   name: string;
@@ -149,3 +148,9 @@ export type DataCheckout = {
   needs: string;
   prdLink?: string;
 };
+
+export type DataConsultation = {
+  name: string;
+  email: string;
+  message: string;
+}

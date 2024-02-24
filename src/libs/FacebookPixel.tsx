@@ -49,7 +49,7 @@ const FacebookPixel = () => {
   }, [router, fbPixel]);
 
   // Function to track Purchase event
-  const trackPurchase = ( value:any, currency:string) => {
+  const trackPurchase = ( value:number, currency:string) => {
     import("react-facebook-pixel")
       .then((x) => x.default)
       .then((ReactPixel) => {
@@ -60,4 +60,6 @@ const FacebookPixel = () => {
 };
 
 export default FacebookPixel;
+
+
 
