@@ -2,8 +2,28 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+    const fbPixel: string = process.env.FACEBOOK_PIXEL || "2732499000382696";
+   
+    useEffect(() => {
+      import("react-facebook-pixel")
+        .then((x) => x.default)
+        .then((ReactPixel) => {
+          ReactPixel.init(fbPixel);
+          const handleRouteChange = () => {
+            ReactPixel.pageView();
+          };
+          router.events.on("routeChangeComplete", handleRouteChange);
+          return () => {
+            router.events.off("routeChangeComplete", handleRouteChange);
+          };
+        });
+    }, [router, fbPixel]);
+    
   return (
     <>
       <Head>

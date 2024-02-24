@@ -1,6 +1,7 @@
 import WhatsappImg from "@/assets/icon/icon-whatsapp.svg";
 import { greetingMessage } from "@/config/GreetingMessage";
 import { Mobile } from "@/config/MediaQuery";
+import FacebookPixel from "@/libs/FacebookPixel";
 import { dataPackage } from "@/libs/HomeData";
 import { DataConsultation, PackagesWeb } from "@/utils/types";
 import Image from "next/image";
@@ -20,6 +21,7 @@ const Whatsapp = () => {
   const [selectPackages, setSelectPackages] = useState<PackagesWeb | null>(
     null
   );
+  const facebookPixel = FacebookPixel();
   const waLink = "https://wa.me";
   const numberWA = "+6288277450792";
   const greetingData = greetingMessage();
@@ -60,6 +62,7 @@ const Whatsapp = () => {
     const namePackages = selectPackages?.namePackage;
     const { name, email, message } = data;
     const sendMessage = `${greetingData} kak, saya ingin konsultasi mengenai paket ${namePackages}.\n\n Name: ${name}\nEmail: ${email}\nPaket Website: ${namePackages}\nMessage: ${message}`;
+    facebookPixel.trackLeads(data.name, data.email);
     const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
       sendMessage
     )}`;

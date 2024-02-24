@@ -5,20 +5,17 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 
 interface Props {
   openStruckPayment: any;
-  
 }
 
-const CheckoutPopUp: React.FC<Props> = ({
-  openStruckPayment,
-}) => {
+const CheckoutPopUp: React.FC<Props> = ({ openStruckPayment }) => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   return (
     <div className="relative">
       {isMobile ? (
         <div
           className={`${
-            openStruckPayment ? "left-10 mt-64" : "opacity-0 top-0"
-          } bg-white w-[80vw] absolute h-auto p-5 rounded-md`}
+            openStruckPayment ? "mt-52" : "opacity-0 top-0"
+          } bg-white w-[100%] absolute h-auto p-5 rounded-md`}
         >
           <div className="text-center space-y-10">
             <IoCheckmarkCircle className="text-6xl text-green-600 mx-auto" />

@@ -118,7 +118,7 @@ const CheckoutPackage = () => {
           packagesPrice
         )}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
       }
-      facebookPixel(packageData?.price, "IDR");
+      facebookPixel.trackPurchase(packageData?.price, "IDR");
       const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
         message
       )}`;
@@ -223,7 +223,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="name"
-                          value={data.name || ''}
+                          value={data.name || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your name"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -236,7 +236,7 @@ const CheckoutPackage = () => {
                         <input
                           type="email"
                           name="email"
-                          value={data.email || ''}
+                          value={data.email || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your email"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -249,7 +249,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="phoneNumber"
-                          value={data.phoneNumber || ''}
+                          value={data.phoneNumber || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your phone number"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -276,7 +276,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="companyName"
-                          value={data.companyName || ''}
+                          value={data.companyName || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your company name"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -289,7 +289,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="industri"
-                          value={data.industri || ''}
+                          value={data.industri || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your industry"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -302,7 +302,7 @@ const CheckoutPackage = () => {
                       </label>
                       <textarea
                         name="needs"
-                        value={data.needs || ''}
+                        value={data.needs || ""}
                         onChange={handleInputChange}
                         placeholder="Enter what you need in your website"
                         className="bg-gray-50 h-24 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -315,7 +315,7 @@ const CheckoutPackage = () => {
                       <input
                         type="text"
                         name="prdLink"
-                        value={data.prdLink}
+                        value={data.prdLink || ""}
                         onChange={handleInputChange}
                         placeholder="Enter url file"
                         className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -395,7 +395,7 @@ const CheckoutPackage = () => {
           <div
             className={` ${
               !openStruckPayment && "hidden"
-            } bg-[#00000090] w-screen h-screen fixed backdrop-blur-md overflow-hidden z-40 top-0`}
+            } bg-[#00000090] px-5 w-screen h-screen fixed backdrop-blur-md overflow-hidden z-40 top-0`}
           >
             <CheckoutPopUp openStruckPayment={openStruckPayment} />
           </div>
@@ -491,7 +491,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="name"
-                          value={data.name || ''}
+                          value={data.name || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your name"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -504,7 +504,7 @@ const CheckoutPackage = () => {
                         <input
                           type="email"
                           name="email"
-                          value={data.email || ''}
+                          value={data.email || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your email"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -517,7 +517,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="phoneNumber"
-                          value={data.phoneNumber || ''}
+                          value={data.phoneNumber || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your phone number"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -544,7 +544,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="companyName"
-                          value={data.companyName || ''}
+                          value={data.companyName || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your company name"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -557,7 +557,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="industri"
-                          value={data.industri || ''}
+                          value={data.industri || ""}
                           onChange={handleInputChange}
                           placeholder="Enter your industry"
                           className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -570,7 +570,7 @@ const CheckoutPackage = () => {
                       </label>
                       <textarea
                         name="needs"
-                        value={data.needs || ''}
+                        value={data.needs || ""}
                         onChange={handleInputChange}
                         placeholder="Enter what you need in your website"
                         className="bg-gray-50 h-24 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -583,7 +583,7 @@ const CheckoutPackage = () => {
                       <input
                         type="text"
                         name="prdLink"
-                        value={data.prdLink}
+                        value={data.prdLink || ""}
                         onChange={handleInputChange}
                         placeholder="Enter url file"
                         className="bg-gray-50 placeholder:text-[14px] p-3 text-[14px] rounded-md w-full"
@@ -761,7 +761,7 @@ const CheckoutPackage = () => {
                           <input
                             type="text"
                             name="name"
-                            value={data.name || ''}
+                            value={data.name || ""}
                             onChange={handleInputChange}
                             placeholder="Enter your name"
                             className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -774,7 +774,7 @@ const CheckoutPackage = () => {
                           <input
                             type="email"
                             name="email"
-                            value={data.email || ''}
+                            value={data.email || ""}
                             onChange={handleInputChange}
                             placeholder="Enter your email"
                             className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -787,7 +787,7 @@ const CheckoutPackage = () => {
                           <input
                             type="text"
                             name="phoneNumber"
-                            value={data.phoneNumber || ''}
+                            value={data.phoneNumber || ""}
                             onChange={handleInputChange}
                             placeholder="Enter your phone number"
                             className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -814,7 +814,7 @@ const CheckoutPackage = () => {
                           <input
                             type="text"
                             name="companyName"
-                            value={data.companyName || ''}
+                            value={data.companyName || ""}
                             onChange={handleInputChange}
                             placeholder="Enter your company name"
                             className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -827,7 +827,7 @@ const CheckoutPackage = () => {
                           <input
                             type="text"
                             name="industri"
-                            value={data.industri || ''}
+                            value={data.industri || ""}
                             onChange={handleInputChange}
                             placeholder="Enter your industry"
                             className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -840,7 +840,7 @@ const CheckoutPackage = () => {
                         </label>
                         <textarea
                           name="needs"
-                          value={data.needs || ''}
+                          value={data.needs || ""}
                           onChange={handleInputChange}
                           placeholder="Enter what you need in your website"
                           className="bg-gray-50 h-24 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
@@ -853,7 +853,7 @@ const CheckoutPackage = () => {
                         <input
                           type="text"
                           name="prdLink"
-                          value={data.prdLink}
+                          value={data.prdLink || ""}
                           onChange={handleInputChange}
                           placeholder="Enter url file"
                           className="bg-gray-50 placeholder:text-[15px] p-3 text-[15px] rounded-md w-full"
