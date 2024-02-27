@@ -89,7 +89,7 @@ const FacebookPixel = () => {
     import("react-facebook-pixel")
     .then((x) => x.default)
     .then((ReactPixel) => {
-      ReactPixel.track("Leads", { name, email });
+      ReactPixel.track("Lead", { name, email });
     });
 };
 
