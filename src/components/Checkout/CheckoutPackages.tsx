@@ -122,7 +122,7 @@ const CheckoutPackage = () => {
             prdLink || "Tidak ada"
           }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n Total Pembayaran: ${rupiah(
             packagesPrice
-          )}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
+          )}\n\n Terimakasih sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
         }
         facebookPixel.trackPurchase(packageData?.price, "IDR");
         const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
@@ -148,7 +148,7 @@ const CheckoutPackage = () => {
           prdLink || "Tidak ada"
         }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n Total Pembayaran: ${rupiah(
           packagesPrice
-        )}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
+        )}\n\n Terimakasih sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
         facebookPixel.trackPurchase(packageData?.price, "IDR");
         const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
           message
