@@ -21,12 +21,12 @@ export const dataAbout: AboutProps = {
   subtitle: "Why choose us?",
   title: "Yang Membedakan Kami Dengan Yang Lain.",
   description:
-    "Kami bukan hanya sekadar pembuat website, kami juga  harus memahami bahwa setiap bisnis unik dan memiliki kebutuhan khusus. Dengan pendekatan yang terfokus pada inovasi, kami menawarkan sejumlah layanan eksklusif untuk memberdayakan bisnis Anda.",
+    "Kami bukan hanya sekadar pembuat website, kami juga  harus memahami bahwa setiap bisnis unik dan memiliki kebutuhan khusus. Dengan pendekatan yang terfokus pada inovasi, kami menawarkan sejumlah layanan eksklusif untuk membantu bisnismu.",
   service: [
     {
       icon: "icon-guarantee.svg",
       nameService: "Garansi Uang Kembali",
-      desc: "Kami yakin dengan kualitas layanan kami. Jika Anda tidak puas  kami akan  anda uang anda sepenuhnya.",
+      desc: "Kami yakin dengan kualitas layanan kami. Jika kamu tidak puas  kami akan mengembalikan uang anda sepenuhnya.",
     },
     {
       icon: "icon-maintenance.svg",
@@ -36,7 +36,7 @@ export const dataAbout: AboutProps = {
     {
       icon: "icon-design.svg",
       nameService: "Desain Khusus",
-      desc: "Setiap elemen website dirancang sesuai dengan kebutuhan bisnis Anda, membuat supaya user-friendly.",
+      desc: "Setiap elemen website dirancang sesuai dengan kebutuhan bisnismu, membuat supaya mudah digunakan usermu.",
     },
     {
       icon: "icon-seo.svg",
@@ -135,7 +135,7 @@ export const dataPackage: PackageProps = {
         "Pengerjaan 1 - 3 bulan",
         "Revisi maksimal 3 kali",
         "Desain Premium",
-        "VPS (2 Cores vCPU, RAM 8Gb, 100Gb NVMe SSD)",
+        "VPS (2 Cores vCPU, RAM 8Gb, 100Gb NVMe SSD) / Serverless",
         "Free Domain 1 tahun (.com, my.id)",
         "MySQL/PostgreSQL/MongoDB",
         "NodeJs/Laravel",
@@ -150,6 +150,9 @@ export const dataPackage: PackageProps = {
     {
       id: generateCustomId(),
       namePackage: "Maintenance Landingpage",
+      desc: "Mengoptimisasi landingpage supaya lebih cepat, dan konversi lebih bagus lagi",
+      duration: "1 - 3 Hari",
+      revision: "Unlimited Revision",
       price: 150000,
       benefit: [
         "Pengerjaan 1 - 3 hari",
@@ -161,6 +164,9 @@ export const dataPackage: PackageProps = {
     {
       id: generateCustomId(),
       namePackage: "Maintenance Web Company Profile",
+      desc: "Mengoptimisasi web company profile supaya lebih cepat, dan konversi lebih bagus lagi",
+      duration: "5 Hari",
+      revision: "Unlimited Revision",
       price: 600000,
       benefit: [
         "Pengerjaan 5 hari",
@@ -171,7 +177,10 @@ export const dataPackage: PackageProps = {
     },
     {
       id: generateCustomId(),
-      namePackage: "Maintenance Web Appliication",
+      namePackage: "Maintenance Web Application",
+      desc: "Mengoptimisasi web application supaya lebih cepat, dan meningkatkan keamanan pada website",
+      duration: "2 - 3 Minggu",
+      revision: "3x Revision",
       price: 5000000,
       benefit: [
         "Penambahan fitur maksimal 2 fitur",
@@ -187,63 +196,46 @@ export const dataTestimoni: TestimoniProps = {
   subtitle: "What They Say",
   title: "Kata Mereka Dengan Hasil dari Evocq.",
   description:
-    "Kami bukan hanya sekadar pembuat website, kami juga  harus memahami bahwa setiap bisnis unik dan memiliki kebutuhan khusus. ",
+    "Berikut benefit yang langsung dirasakan langsung oleh klien kami ketika bekerjasama dengan agency kami.",
   testimoni: [
     {
-      name: "Benny",
+      name: "Icha",
       package: "Landingpage",
       message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+        "Thanks kak pekerjaan sesuai brief, cepat dan tanggap. Proses pekerjaan tepat waktu dan respon nya sangat baik",
+      image: "testimoni.svg",
     },
     {
-      name: "Benny",
+      name: "Phinia P",
       package: "Landingpage",
       message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+        "Keren bgtt kerjanya lumayan cepet, bikin web sesuai dgn keinginan user kalo ada revisi langsung sat set ngerjain. kalo ada yg kurang dipahamin bisa menjelaskan dengan baik the best pokoknya 👍👍  ",
+      image: "testimoni3.svg",
     },
     {
-      name: "Benny",
+      name: "Helfi A",
       package: "Landingpage",
-      message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+      message: "Respone cepat dan mantap!",
+      image: "testimoni2.svg",
     },
     {
-      name: "Benny",
+      name: "Dini A",
       package: "Landingpage",
-      message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+      message: "fast respon, hasil mantap!",
+      image: "testimoni3.svg",
     },
     {
-      name: "Benny",
-      package: "Landingpage",
-      message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+      name: "Al B",
+      package: "Web Company Profile",
+      message: "Hasil sesuai keinginan user, fast respon!",
+      image: "testimoni3.svg",
     },
     {
-      name: "Benny",
-      package: "Landingpage",
+      name: "Wildan A",
+      package: "Website Company Profile",
       message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
-    },
-    {
-      name: "Benny",
-      package: "Landingpage",
-      message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
-    },
-    {
-      name: "Benny",
-      package: "Landingpage",
-      message:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, voluptatem!",
-      image: "",
+        "Hasil sesuai kebutuhan, respon ketika di chat sangat cepat. memberikan tutorial edit content website juga!",
+      image: "testimoni3.svg",
     },
   ],
 };

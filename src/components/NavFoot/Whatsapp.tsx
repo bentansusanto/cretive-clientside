@@ -3,7 +3,7 @@ import { greetingMessage } from "@/config/GreetingMessage";
 import { Mobile } from "@/config/MediaQuery";
 import FacebookPixel from "@/libs/FacebookPixel";
 import { dataPackage } from "@/libs/HomeData";
-import { DataConsultation, PackagesWeb } from "@/utils/types";
+import { DataConsultation, MaintenanceWeb, PackagesWeb } from "@/utils/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
@@ -18,7 +18,7 @@ const Whatsapp = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openMessage, setOpenMessage] = useState(false);
   const [openPackages, setOpenPackages] = useState(false);
-  const [selectPackages, setSelectPackages] = useState<PackagesWeb | null>(
+  const [selectPackages, setSelectPackages] = useState<PackagesWeb | MaintenanceWeb | null>(
     null
   );
   const facebookPixel = FacebookPixel();
@@ -32,9 +32,14 @@ const Whatsapp = () => {
   };
 
   const handleSelectPackages = (id: string) => {
-    const foundPackages = dataPackage.package.find(
+    const packageData = dataPackage.package.find(
       (packages) => packages.id === id
     );
+    const maintenanceData = dataPackage.maintenance.find(
+      (maintenance) => maintenance.id === id
+    );
+    const foundPackages = packageData?.id ? packageData : maintenanceData
+
     if (foundPackages) {
       setSelectPackages(foundPackages);
     }
@@ -68,6 +73,7 @@ const Whatsapp = () => {
     )}`;
     window.open(whatsappLink, "_blank");
     setOpenMessage(false);
+    setData(initialValue || "")
   };
 
   const disabledButton =
@@ -131,7 +137,7 @@ const Whatsapp = () => {
                 <p className="text-[15px] w-full">
                   {selectPackages
                     ? selectPackages.namePackage
-                    : "Please Select Payment"}
+                    : "Please Select Package"}
                 </p>
                 <BiChevronDown
                   className={` ${
@@ -145,6 +151,15 @@ const Whatsapp = () => {
                 } bg-white rounded-md shadow-md w-full h-24 absolute top-20 transition-all ease-in-out duration-300 space-y-1 overflow-y-scroll scroll-smooth`}
               >
                 {dataPackage.package.map((list, idx) => (
+                  <div
+                    className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
+                    key={idx}
+                    onClick={() => handleSelectPackages(list.id)}
+                  >
+                    <p>{list.namePackage}</p>
+                  </div>
+                ))}
+                {dataPackage.maintenance.map((list, idx) => (
                   <div
                     className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
                     key={idx}
@@ -230,7 +245,7 @@ const Whatsapp = () => {
                 <p className="text-[15px] w-full">
                   {selectPackages
                     ? selectPackages.namePackage
-                    : "Please Select Payment"}
+                    : "Please Select Package"}
                 </p>
                 <BiChevronDown
                   className={` ${
@@ -244,6 +259,15 @@ const Whatsapp = () => {
                 } bg-white rounded-md shadow-md w-full h-24 absolute top-20 transition-all ease-in-out duration-300 space-y-1 overflow-y-scroll scroll-smooth`}
               >
                 {dataPackage.package.map((list, idx) => (
+                  <div
+                    className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
+                    key={idx}
+                    onClick={() => handleSelectPackages(list.id)}
+                  >
+                    <p>{list.namePackage}</p>
+                  </div>
+                ))}
+                {dataPackage.maintenance.map((list, idx) => (
                   <div
                     className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
                     key={idx}
@@ -330,7 +354,7 @@ const Whatsapp = () => {
                   <p className="text-[15px] w-full">
                     {selectPackages
                       ? selectPackages.namePackage
-                      : "Please Select Payment"}
+                      : "Please Select Package"}
                   </p>
                   <BiChevronDown
                     className={` ${
@@ -352,6 +376,15 @@ const Whatsapp = () => {
                       <p>{list.namePackage}</p>
                     </div>
                   ))}
+                  {dataPackage.maintenance.map((list, idx) => (
+                  <div
+                    className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
+                    key={idx}
+                    onClick={() => handleSelectPackages(list.id)}
+                  >
+                    <p>{list.namePackage}</p>
+                  </div>
+                ))}
                 </div>
               </div>
               <div className="my-3 space-y-2">

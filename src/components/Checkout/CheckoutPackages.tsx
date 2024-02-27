@@ -30,6 +30,9 @@ const CheckoutPackage = () => {
   const packageData = dataPackage.package.find(
     (p: { id: string }) => p.id === productId
   );
+  const maintenanceData = dataPackage.maintenance.find(
+    (p: { id: string }) => p.id === productId
+  );
   const facebookPixel = FacebookPixel();
   const [namePackages, setNamePackages] = useState("");
   const { isMobile, isTablet, isDesktop } = Mobile();
@@ -57,14 +60,16 @@ const CheckoutPackage = () => {
   };
 
   const handleOpenPayment = () => {
-    setOpenPayment(true);
+    setOpenPayment(!openPayment);
   };
 
   useEffect(() => {
     if (packageData?.namePackage) {
       setNamePackages(packageData.namePackage as string);
+    } else if (maintenanceData?.namePackage) {
+      setNamePackages(maintenanceData.namePackage as string);
     }
-  }, [packageData]);
+  }, [packageData, maintenanceData]);
 
   useEffect(() => {
     const savedFormData = getCookie("checkoutData");
@@ -94,36 +99,64 @@ const CheckoutPackage = () => {
     e.preventDefault();
     if (selectPayment) {
       const { bankName, noRek, nameOwner } = selectPayment;
-      const packagesName = packageData?.namePackage;
-      const packagesPrice = packageData?.price;
       let message;
-      setCookie("checkoutData", JSON.stringify({ data }), 7);
-      const {
-        name,
-        email,
-        phoneNumber,
-        companyName,
-        industri,
-        needs,
-        prdLink,
-      } = data;
-      if (packageData?.namePackage === "Web Application") {
-        message = `${greetingData} kak, saya mau pesan ${packagesName}. \n\n Nama: ${name}\n Email: ${email}\n No.Hp: ${phoneNumber}\n Nama Perusahaan: ${companyName}\n Industri: ${industri}\n Kebutuhan Website: ${needs}\n PRD Link: ${
-          prdLink || "Tidak ada"
-        }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n\n Terimakasih sudah melakukan pemesanan, kami akan tinjau terlebih dahulu project anda untuk menentukan harga yang sesuai dengan kebutuhan anda.`;
-      } else {
+      if (packageData?.namePackage) {
+        const packagesName = packageData?.namePackage;
+        const packagesPrice = packageData?.price;
+        setCookie("checkoutData", JSON.stringify({ data }), 7);
+        const {
+          name,
+          email,
+          phoneNumber,
+          companyName,
+          industri,
+          needs,
+          prdLink,
+        } = data;
+        if (packageData?.namePackage === "Web Application") {
+          message = `${greetingData} kak, saya mau pesan ${packagesName}. \n\n Nama: ${name}\n Email: ${email}\n No.Hp: ${phoneNumber}\n Nama Perusahaan: ${companyName}\n Industri: ${industri}\n Kebutuhan Website: ${needs}\n PRD Link: ${
+            prdLink || "Tidak ada"
+          }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n\n Terimakasih sudah melakukan pemesanan, kami akan tinjau terlebih dahulu project anda untuk menentukan harga yang sesuai dengan kebutuhan anda.`;
+        } else {
+          message = `${greetingData} kak, saya mau pesan ${packagesName}. \n\n Nama: ${name}\n Email: ${email}\n No.Hp: ${phoneNumber}\n Nama Perusahaan: ${companyName}\n Industri: ${industri}\ Kebutuhan Website: ${needs}\n PRD Link: ${
+            prdLink || "Tidak ada"
+          }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n Total Pembayaran: ${rupiah(
+            packagesPrice
+          )}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
+        }
+        facebookPixel.trackPurchase(packageData?.price, "IDR");
+        const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
+          message
+        )}`;
+        window.open(whatsappLink, "_blank");
+        setOpenStruckPayment(true);
+        setData(initialValue || "");
+      } else if (maintenanceData?.namePackage) {
+        const packagesName = packageData?.namePackage;
+        const packagesPrice = packageData?.price;
+        setCookie("checkoutData", JSON.stringify({ data }), 7);
+        const {
+          name,
+          email,
+          phoneNumber,
+          companyName,
+          industri,
+          needs,
+          prdLink,
+        } = data;
         message = `${greetingData} kak, saya mau pesan ${packagesName}. \n\n Nama: ${name}\n Email: ${email}\n No.Hp: ${phoneNumber}\n Nama Perusahaan: ${companyName}\n Industri: ${industri}\ Kebutuhan Website: ${needs}\n PRD Link: ${
           prdLink || "Tidak ada"
         }\n\n -------------------------------------------- \n\n Berikut metode pembayaran yang anda gunakan untuk pembayaran paket ${packagesName}\n\n Nama Bank: ${bankName}\n Nomor Rekening: ${noRek}\n Pemilik: ${nameOwner}\n Total Pembayaran: ${rupiah(
           packagesPrice
         )}\n\n Terimakasih kak sudah melakukan pemesanan, Mohon untuk mengirimkan bukti pembayaran pembelian paket dan kami akan memberikan surat perjanjian kerjasama`;
+        facebookPixel.trackPurchase(packageData?.price, "IDR");
+        const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
+          message
+        )}`;
+        window.open(whatsappLink, "_blank");
+        setOpenStruckPayment(true);
+        setData(initialValue || "");
       }
-      facebookPixel.trackPurchase(packageData?.price, "IDR");
-      const whatsappLink = `${waLink}/${numberWA}?text=${encodeURIComponent(
-        message
-      )}`;
-      window.open(whatsappLink, "_blank");
-      setOpenStruckPayment(true);
     }
   };
 
@@ -134,6 +167,44 @@ const CheckoutPackage = () => {
       data.companyName &&
       data.industri &&
       data.needs) === undefined;
+
+  const packagePrice = () => {
+    let packagePrice;
+    if (packageData?.id) {
+      packagePrice =
+        packageData.namePackage === "Web Application"
+          ? null
+          : rupiah(packageData.price);
+    } else if (maintenanceData?.id) {
+      packagePrice =
+        maintenanceData.namePackage && rupiah(maintenanceData.price);
+    }
+    return packagePrice;
+  };
+
+  const totalPricePackage = () => {
+    let totalPrice;
+    if (packageData?.id) {
+      totalPrice = packageData?.namePackage !== "Web Application" && (
+        <div className=" flex items-center justify-between text-[16px] font-semibold mb-5">
+          <p className="text-[15px] font-normal text-gray-500">Total:</p>
+          <p className="text-[15px] font-semibold">
+            {rupiah(packageData?.price)}
+          </p>
+        </div>
+      );
+    } else if (maintenanceData?.id) {
+      totalPrice = (
+        <div className=" flex items-center justify-between text-[16px] font-semibold mb-5">
+          <p className="text-[15px] font-normal text-gray-500">Total:</p>
+          <p className="text-[15px] font-semibold">
+            {rupiah(maintenanceData?.price)}
+          </p>
+        </div>
+      );
+    }
+    return totalPrice;
+  };
 
   return (
     <div>
@@ -153,17 +224,19 @@ const CheckoutPackage = () => {
               <div className="bg-white space-y-8 p-5 shadow-md w-[100%] h-auto">
                 <div className="flex items-center justify-between">
                   <p className="text-[16px] font-medium">
-                    {packageData?.namePackage}
+                  {packageData?.id
+                              ? packageData.namePackage
+                              : maintenanceData?.namePackage}
                   </p>
                   <p className="text-[16px] font-semibold text-gray-500">
-                    {packageData?.namePackage === "Web Application"
-                      ? null
-                      : `${rupiah(packageData?.price)}`}
+                    {packagePrice()}
                   </p>
                 </div>
                 <div className="space-y-3">
                   <p className="text-[14px] font-normal text-gray-500">
-                    {packageData?.desc}
+                  {packageData?.id
+                              ? packageData.desc
+                              : maintenanceData?.desc}
                   </p>
                   <div className="space-y-3">
                     {/* Revision dan Duration */}
@@ -171,13 +244,17 @@ const CheckoutPackage = () => {
                       <div className="flex items-center space-x-2">
                         <TbReload className="text-[16px]" />
                         <p className="text-[13px] font-semibold text-gray-500">
-                          {packageData?.revision}
+                        {packageData?.id
+                              ? packageData.revision
+                              : maintenanceData?.revision}
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <PiTimerBold className="text-[16px]" />
                         <p className="text-[13px] font-semibold text-gray-500">
-                          {packageData?.duration}
+                        {packageData?.id
+                              ? packageData.duration
+                              : maintenanceData?.duration}
                         </p>
                       </div>
                     </div>
@@ -356,16 +433,7 @@ const CheckoutPackage = () => {
                         ))}
                       </div>
                     </div>
-                    {packageData?.namePackage !== "Web Application" && (
-                      <div className=" flex items-center justify-between text-[16px] font-semibold mb-5">
-                        <p className="text-[15px] font-normal text-gray-500">
-                          Total:
-                        </p>
-                        <p className="text-[15px] font-semibold">
-                          {rupiah(packageData?.price)}
-                        </p>
-                      </div>
-                    )}
+                    {totalPricePackage()}
                     <button
                       type="submit"
                       disabled={!selectPayment || disabledButton}
@@ -417,17 +485,19 @@ const CheckoutPackage = () => {
                 <div className="sticky space-y-8 top-5 bg-white shadow-md p-5 rounded-md w-[40vw] h-auto">
                   <div className="flex items-center justify-between">
                     <p className="text-[16px] font-medium">
-                      {packageData?.namePackage}
+                    {packageData?.id
+                              ? packageData.namePackage
+                              : maintenanceData?.namePackage}
                     </p>
                     <p className="text-[16px] font-semibold text-gray-500">
-                      {packageData?.namePackage === "Web Application"
-                        ? null
-                        : `${rupiah(packageData?.price)}`}
+                      {packagePrice()}
                     </p>
                   </div>
                   <div className="space-y-3">
                     <p className="text-[15px] font-normal text-gray-500">
-                      {packageData?.desc}
+                    {packageData?.id
+                              ? packageData.desc
+                              : maintenanceData?.desc}
                     </p>
                     <div className="space-y-3">
                       {/* Revision dan Duration */}
@@ -435,13 +505,17 @@ const CheckoutPackage = () => {
                         <div className="flex items-center space-x-2">
                           <TbReload className="text-[156]" />
                           <p className="text-[14px] font-semibold text-gray-500">
-                            {packageData?.revision}
+                            {packageData?.id
+                              ? packageData.revision
+                              : maintenanceData?.revision}
                           </p>
                         </div>
                         <div className="flex items-center space-x-2">
                           <PiTimerBold className="text-[156]" />
                           <p className="text-[14px] font-semibold text-gray-500">
-                            {packageData?.duration}
+                            {packageData?.id
+                              ? packageData.duration
+                              : maintenanceData?.duration}
                           </p>
                         </div>
                       </div>
@@ -461,17 +535,29 @@ const CheckoutPackage = () => {
                           />
                         </div>
                         <ul className={`${!openBenefit && "hidden"} space-y-3`}>
-                          {packageData?.benefit.map((list, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-center space-x-2"
-                            >
-                              <GoCheckCircle className="text-lg text-green-500" />
-                              <p className="text-[14px] w-[80%] text-gray-400">
-                                {list}
-                              </p>
-                            </li>
-                          ))}
+                          {packageData?.id
+                            ? packageData?.benefit.map((list, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-center space-x-2"
+                                >
+                                  <GoCheckCircle className="text-lg text-green-500" />
+                                  <p className="text-[14px] text-gray-400">
+                                    {list}
+                                  </p>
+                                </li>
+                              ))
+                            : maintenanceData?.benefit.map((list, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-center space-x-2"
+                                >
+                                  <GoCheckCircle className="text-lg text-green-500" />
+                                  <p className="text-[14px] text-gray-400">
+                                    {list}
+                                  </p>
+                                </li>
+                              ))}
                         </ul>
                       </div>
                     </div>
@@ -624,16 +710,7 @@ const CheckoutPackage = () => {
                         ))}
                       </div>
                     </div>
-                    {packageData?.namePackage !== "Web Application" && (
-                      <div className=" flex items-center justify-between text-[16px] font-semibold mb-5">
-                        <p className="text-[15px] font-normal text-gray-500">
-                          Total:
-                        </p>
-                        <p className="text-[15px] font-semibold">
-                          {rupiah(packageData?.price)}
-                        </p>
-                      </div>
-                    )}
+                    {totalPricePackage()}
                     <button
                       type="submit"
                       disabled={!selectPayment || disabledButton}
@@ -685,18 +762,20 @@ const CheckoutPackage = () => {
                 <div className="block">
                   <div className="sticky space-y-8 top-5 bg-white shadow-md p-5 rounded-md w-96 h-auto">
                     <div className="flex items-center justify-between">
-                      <p className="text-[16px] font-medium">
-                        {packageData?.namePackage}
+                      <p className="text-[16px] w-[60%] font-medium">
+                        {packageData?.id
+                          ? packageData.namePackage
+                          : maintenanceData?.namePackage}
                       </p>
                       <p className="text-[16px] font-semibold text-gray-500">
-                        {packageData?.namePackage === "Web Application"
-                          ? null
-                          : `${rupiah(packageData?.price)}`}
+                        {packagePrice()}
                       </p>
                     </div>
                     <div className="space-y-3">
                       <p className="text-[15px] font-normal text-gray-500">
-                        {packageData?.desc}
+                        {packageData?.id
+                          ? packageData.desc
+                          : maintenanceData?.desc}
                       </p>
                       <div className="space-y-3">
                         {/* Revision dan Duration */}
@@ -704,13 +783,17 @@ const CheckoutPackage = () => {
                           <div className="flex items-center space-x-2">
                             <TbReload className="text-[156]" />
                             <p className="text-[14px] font-semibold text-gray-500">
-                              {packageData?.revision}
+                              {packageData?.id
+                                ? packageData.revision
+                                : maintenanceData?.revision}
                             </p>
                           </div>
                           <div className="flex items-center space-x-2">
                             <PiTimerBold className="text-[156]" />
                             <p className="text-[14px] font-semibold text-gray-500">
-                              {packageData?.duration}
+                              {packageData?.id
+                                ? packageData.duration
+                                : maintenanceData?.duration}
                             </p>
                           </div>
                         </div>
@@ -732,17 +815,29 @@ const CheckoutPackage = () => {
                           <ul
                             className={`${!openBenefit && "hidden"} space-y-3`}
                           >
-                            {packageData?.benefit.map((list, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-center space-x-2"
-                              >
-                                <GoCheckCircle className="text-lg text-green-500" />
-                                <p className="text-[14px] text-gray-400">
-                                  {list}
-                                </p>
-                              </li>
-                            ))}
+                            {packageData?.id
+                              ? packageData?.benefit.map((list, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="flex items-center space-x-2"
+                                  >
+                                    <GoCheckCircle className="text-lg text-green-500" />
+                                    <p className="text-[14px] text-gray-400">
+                                      {list}
+                                    </p>
+                                  </li>
+                                ))
+                              : maintenanceData?.benefit.map((list, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="flex items-center space-x-2"
+                                  >
+                                    <GoCheckCircle className="text-lg text-green-500" />
+                                    <p className="text-[14px] text-gray-400">
+                                      {list}
+                                    </p>
+                                  </li>
+                                ))}
                           </ul>
                         </div>
                       </div>
@@ -894,16 +989,7 @@ const CheckoutPackage = () => {
                           ))}
                         </div>
                       </div>
-                      {packageData?.namePackage !== "Web Application" && (
-                        <div className=" flex items-center justify-between text-[16px] font-semibold mb-5">
-                          <p className="text-[15px] font-normal text-gray-500">
-                            Total:
-                          </p>
-                          <p className="text-[15px] font-semibold">
-                            {rupiah(packageData?.price)}
-                          </p>
-                        </div>
-                      )}
+                      {totalPricePackage()}
                       <button
                         type="submit"
                         disabled={!selectPayment || disabledButton}

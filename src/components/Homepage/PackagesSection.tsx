@@ -58,7 +58,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-3xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-[#007EFF]">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -88,7 +88,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-3xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-[#007EFF]">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -99,7 +99,10 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-blue-800 p-3 w-full rounded-md text-white">
+                  <button
+                    onClick={() => handleRoute(list.id)}
+                    className="bg-blue-800 p-3 w-full rounded-md text-white"
+                  >
                     Beli Sekarang
                   </button>
                 </div>
@@ -145,7 +148,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-3xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-[#007EFF]">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -175,7 +178,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-3xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-[#007EFF]">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -186,7 +189,10 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button className="bg-[#0049A5] p-3 w-full rounded-md text-white">
+                  <button
+                    onClick={() => handleRoute(list.id)}
+                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                  >
                     Beli Sekarang
                   </button>
                 </div>
@@ -266,7 +272,7 @@ const PackagesSection = () => {
                     <p className="text-[15px] font-semibold">
                       {list.namePackage}
                     </p>
-                    <h4 className="text-3xl font-semibold text-[#007EFF]">
+                    <h4 className="text-2xl font-semibold text-[#007EFF]">
                       {rupiah(list.price)}
                     </h4>
                     <div className="space-y-3">

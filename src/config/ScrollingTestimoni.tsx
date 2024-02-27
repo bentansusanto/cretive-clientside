@@ -9,9 +9,7 @@ export const AnimateScrolling = () => {
   const [testimonials2, setTestimonials2] = useState<Testimoni[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<"down" | "up">("down");
-  const [scrollDirection1, setScrollDirection1] = useState<"left" | "right">(
-    "left"
-  );
+  const [scrollDirection2, setScrollDirection2] = useState<"down" | "up">("up");
   const containerRef1 = useRef<HTMLDivElement>(null);
   const containerRef2 = useRef<HTMLDivElement>(null);
 
@@ -33,14 +31,16 @@ export const AnimateScrolling = () => {
 
         if (scrollDirection === "down") {
           container.scrollTop += 2; // Change scrolling speed as needed
-          if (container.scrollTop >= maxScrollTop) {
-            setCurrentIndex((prevIndex) => 0);
+          if (container.scrollTop >= maxScrollTop - 1) {
+            // setCurrentIndex((prevIndex) => 0);
             setScrollDirection("up");
           }
         } else {
           container.scrollTop -= 2; // Change scrolling speed as needed
-          if (container.scrollTop === 0) {
-            setCurrentIndex((prevIndex) => testimonials1.length - 1);
+          if (container.scrollTop <= 0) {
+            setCurrentIndex(
+              (prevIndex) => (prevIndex + 1) % testimonials1.length
+            );
             setScrollDirection("down");
           }
         }
@@ -57,24 +57,25 @@ export const AnimateScrolling = () => {
         const container = containerRef2.current;
         const maxScrollTop = container.scrollHeight - container.clientHeight;
 
-        if (scrollDirection === "down") {
-          container.scrollTop -= 2; // Change scrolling speed as needed
-          if (container.scrollTop >= maxScrollTop) {
-            setCurrentIndex((prevIndex) => 1);
-            setScrollDirection("up");
+        if (scrollDirection2 === "down") {
+          container.scrollTop -= 2;
+          if (container.scrollTop <= 0) {
+            setCurrentIndex(
+              (prevIndex) => (prevIndex + 1) % testimonials2.length
+            );
+            setScrollDirection2("up");
           }
         } else {
-          container.scrollTop += 2; // Change scrolling speed as needed
-          if (container.scrollTop === 0) {
-            setCurrentIndex((prevIndex) => testimonials2.length - 1);
-            setScrollDirection("down");
+          container.scrollTop += 2;
+          if (container.scrollTop >= maxScrollTop - 1) {
+            setScrollDirection2("down");
           }
         }
       }
-    }, 50); // Change interval time as needed
+    }, 80);
 
     return () => clearInterval(intervalId);
-  }, [testimonials2.length, scrollDirection]);
+  }, [testimonials2.length, scrollDirection2]);
 
   return {
     currentIndex,

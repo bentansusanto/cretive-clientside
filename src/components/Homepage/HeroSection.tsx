@@ -62,7 +62,6 @@ const HeroSection = () => {
     }
   };
 
-
   return (
     <div>
       {isMobile ? (
@@ -177,7 +176,7 @@ const HeroSection = () => {
               <div>
                 <button
                   onClick={handleCheckDomain}
-                  className="bg-[#0049A5] px-4 py-2.5 text-white text-[14px] rounded-md"
+                  className="bg-[#0049A5] px-4 py-2.5 text-white text-[14px] whitespace-nowrap rounded-md"
                 >
                   Check Domain
                 </button>
@@ -266,7 +265,7 @@ const HeroSection = () => {
 // export const getServerSideProps = async (context: any) => {
 //   // Get IP address from the request
 //   const ipAddress = context.req.headers['x-forwarded-for'] || context.req.connection.remoteAddress;
-  
+
 //   return {
 //     props: {
 //       ipAddress,

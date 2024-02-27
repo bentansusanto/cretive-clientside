@@ -52,9 +52,12 @@ export type PackagesWeb = {
   benefit: string[];
 };
 
-type MaintenanceWeb = {
+export type MaintenanceWeb = {
   id: string;
   namePackage: string;
+  desc: string;
+  duration: string;
+  revision: string;
   price: number | any;
   benefit: string[];
 };
@@ -118,13 +121,13 @@ export interface TemplatesProps extends HeadlineProps {}
 
 export interface CheckoutProps extends HeadlineProps {}
 
-interface AddToCartParams {
-  content_id: string;
-  content_name: string;
-  content_type: string;
-  value: number | string;
-  currency: string;
-};
+// interface AddToCartParams {
+//   content_id: string;
+//   content_name: string;
+//   content_type: string;
+//   value: number | string;
+//   currency: string;
+// };
 
 export type TrackLeads = {
   name: string;
