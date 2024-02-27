@@ -72,7 +72,7 @@ export const AnimateScrolling = () => {
           }
         }
       }
-    }, 80);
+    }, 50);
 
     return () => clearInterval(intervalId);
   }, [testimonials2.length, scrollDirection2]);

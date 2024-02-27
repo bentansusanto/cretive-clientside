@@ -30,7 +30,7 @@ const CTASection = () => {
               </div>
             </div>
             <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-            <Link href={`#package`}>Order Sekarang</Link>
+              <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
         </div>
@@ -56,7 +56,7 @@ const CTASection = () => {
               </div>
             </div>
             <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-            <Link href={`#package`}>Order Sekarang</Link>
+              <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
         </div>
@@ -82,7 +82,7 @@ const CTASection = () => {
                 </div>
               </div>
               <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
-              <Link href={`#package`}>Order Sekarang</Link>
+                <Link href={`#package`}>Order Sekarang</Link>
               </button>
             </div>
           </div>

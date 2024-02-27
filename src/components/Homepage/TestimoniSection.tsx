@@ -46,13 +46,20 @@ const TestimoniSection = () => {
                       idx === currentIndex ? " border-blue-500" : ""
                     } bg-white`}
                   >
-                    <p className="text-[15px]">{list.message}</p>
+                    <p className="text-[14px] w-[60%]">{list.message}</p>
                     <div className="flex items-center space-x-2">
-                      <div className="space-y-1">
-                        <p className="text-[15px]">{list.name}</p>
-                        <p className="text-[15px] text-gray-400">
-                          {list.package}
-                        </p>
+                      <div className=" flex items-center space-x-2 mt-5">
+                        <Image
+                          src={require("@/assets/images/" + list.image)}
+                          alt="testimoni.svg"
+                          className="w-12"
+                        />
+                        <div className="space-y-1">
+                          <p className="text-[14px]">{list.name}</p>
+                          <p className="text-[14px] text-gray-400">
+                            {list.package}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -68,13 +75,20 @@ const TestimoniSection = () => {
                       idx === currentIndex ? " border-blue-500" : ""
                     } bg-white`}
                   >
-                    <p className="text-[15px]">{list.message}</p>
+                    <p className="text-[14px] w-[60%]">{list.message}</p>
                     <div className="flex items-center space-x-2">
-                      <div className="space-y-1">
-                        <p className="text-[15px]">{list.name}</p>
-                        <p className="text-[15px] text-gray-400">
-                          {list.package}
-                        </p>
+                      <div className=" flex items-center space-x-2 mt-5">
+                        <Image
+                          src={require("@/assets/images/" + list.image)}
+                          alt="testimoni.svg"
+                          className="w-12"
+                        />
+                        <div className="space-y-1">
+                          <p className="text-[14px]">{list.name}</p>
+                          <p className="text-[14px] w-[60%] text-gray-400">
+                            {list.package}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

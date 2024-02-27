@@ -246,12 +246,14 @@ const FAQSection = () => {
                       openSelectSecondFAQ && "h-auto"
                     } bg-white transition-all ease-linear duration-300 p-5`}
                   >
-                    <div onClick={() => handleOpenSecondFAQ(idx)} className="flex items-center justify-between cursor-pointer">
+                    <div
+                      onClick={() => handleOpenSecondFAQ(idx)}
+                      className="flex items-center justify-between cursor-pointer"
+                    >
                       <p className="font-semibold text-[15px]">
                         {list.question}
                       </p>
                       <GoPlus
-                        
                         className={`${
                           selectSecondFAQ === idx &&
                           !openSelectSecondFAQ &&
