@@ -241,7 +241,7 @@ const HeroSection = () => {
                 <div>
                   <button
                     onClick={handleCheckDomain}
-                    className="bg-[#0049A5] px-5 py-4 font-semibold text-white text-[15px] rounded-md"
+                    className="bg-[#0049A5] px-5 py-4 border border-[#0049A5] font-semibold text-white text-[15px] rounded-md"
                   >
                     Check Domain
                   </button>
