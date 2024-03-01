@@ -89,7 +89,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button className="bg-[#0049A5] px-5 py-4 text-white text-[15px] rounded-lg">
+            <button className="bg-[#0049A5] px-5 py-3 border border-[#0049A5] text-white text-[15px] rounded-lg">
               Order Sekarang
             </button>
           </div>
