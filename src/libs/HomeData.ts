@@ -11,7 +11,7 @@ import {
 import { generateCustomId } from "@/config/GenerateId";
 
 export const dataHero: HeroProps = {
-  title: "Tingkatkan Pelanggan Dengan Cepat, Tanpa Ribet!",
+  title: "Bikin Website Bergaransi Uang Kembali!",
   description:
     "Yuk, cek domainmu sekarang dan pilih paket website yang anda perlukan. Website yang kami buat menyesuaikan kebutuhan anda. 100% garansi uang kembali jika tidak cocok.",
   image: "bg-hero-section.webp",
@@ -21,7 +21,7 @@ export const dataAbout: AboutProps = {
   subtitle: "Why choose us?",
   title: "Yang Membedakan Kami Dengan Yang Lain.",
   description:
-    "Kami bukan hanya sekadar pembuat website, kami juga  harus memahami bahwa setiap bisnis unik dan memiliki kebutuhan khusus. Dengan pendekatan yang terfokus pada inovasi, kami menawarkan sejumlah layanan eksklusif untuk membantu bisnismu.",
+    "Kami paham bahwa anda punya pengalaman bikin website tapi tidak sesuai dengan kebutuhan, dan juga pernah ditipu oleh para oknum. Untuk mengatasi hal tersebut kami memberikan service yang memberikan keamanan dan kepuasan dalam membuat website.",
   service: [
     {
       icon: "icon-guarantee.svg",
@@ -29,9 +29,9 @@ export const dataAbout: AboutProps = {
       desc: "Kami yakin dengan kualitas layanan kami. Jika kamu tidak puas  kami akan mengembalikan uang anda sepenuhnya.",
     },
     {
-      icon: "icon-maintenance.svg",
-      nameService: "Maintenance Secara Berkala",
-      desc: "Memelihara setelah peluncuran untuk menjaga kinerja website menjadi optimal.",
+      icon: "icon-spk.svg",
+      nameService: "Menggunakan SPK",
+      desc: "SPK (Surat Perjanjian Kerjasama) dibuat untuk menghindari penipuan yang dilakukan vendor ataupun client.",
     },
     {
       icon: "icon-design.svg",
@@ -48,7 +48,7 @@ export const dataAbout: AboutProps = {
 
 export const dataPortofolio: PortoProps = {
   subtitle: "Portofolio",
-  title: "Project Terbaru Kami Kerjakan.",
+  title: "Project Yang Pernah Kami Kerjakan.",
   porto: [
     {
       thumbnail: "Medcraft-Clinic.webp",
