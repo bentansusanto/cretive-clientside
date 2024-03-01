@@ -29,7 +29,7 @@ const CTASection = () => {
                 ))}
               </div>
             </div>
-            <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+            <button className="bg-[#0049A5] mt-10 px-5 py-4 text-white text-[15px] rounded-md">
               <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
@@ -55,7 +55,7 @@ const CTASection = () => {
                 ))}
               </div>
             </div>
-            <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+            <button className="bg-[#0049A5] mt-10 px-5 py-4 text-white text-[15px] rounded-md">
               <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
@@ -81,7 +81,7 @@ const CTASection = () => {
                   ))}
                 </div>
               </div>
-              <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+              <button className="bg-[#0049A5] mt-10 px-5 py-4 font-semibold text-white text-[15px] rounded-md">
                 <Link href={`#package`}>Order Sekarang</Link>
               </button>
             </div>

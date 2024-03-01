@@ -18,9 +18,9 @@ const Whatsapp = () => {
   const { isMobile, isTablet, isDesktop } = Mobile();
   const [openMessage, setOpenMessage] = useState(false);
   const [openPackages, setOpenPackages] = useState(false);
-  const [selectPackages, setSelectPackages] = useState<PackagesWeb | MaintenanceWeb | null>(
-    null
-  );
+  const [selectPackages, setSelectPackages] = useState<
+    PackagesWeb | MaintenanceWeb | null
+  >(null);
   const facebookPixel = FacebookPixel();
   const waLink = "https://wa.me";
   const numberWA = "+6288277450792";
@@ -38,7 +38,7 @@ const Whatsapp = () => {
     const maintenanceData = dataPackage.maintenance.find(
       (maintenance) => maintenance.id === id
     );
-    const foundPackages = packageData?.id ? packageData : maintenanceData
+    const foundPackages = packageData?.id ? packageData : maintenanceData;
 
     if (foundPackages) {
       setSelectPackages(foundPackages);
@@ -73,7 +73,7 @@ const Whatsapp = () => {
     )}`;
     window.open(whatsappLink, "_blank");
     setOpenMessage(false);
-    setData(initialValue || "")
+    setData(initialValue || "");
   };
 
   const disabledButton =
@@ -185,7 +185,7 @@ const Whatsapp = () => {
             <button
               type="submit"
               disabled={disabledButton}
-              className="w-full text-white bg-blue-800 p-3 rounded-md"
+              className="w-full text-white bg-blue-800 p-4 rounded-md"
             >
               <p
                 onClick={handleSendMessage}
@@ -293,7 +293,7 @@ const Whatsapp = () => {
             <button
               type="submit"
               disabled={disabledButton}
-              className="w-full text-white bg-blue-800 p-3 rounded-md"
+              className="w-full text-white bg-blue-800 p-4 rounded-md"
             >
               <p
                 onClick={handleSendMessage}
@@ -377,14 +377,14 @@ const Whatsapp = () => {
                     </div>
                   ))}
                   {dataPackage.maintenance.map((list, idx) => (
-                  <div
-                    className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
-                    key={idx}
-                    onClick={() => handleSelectPackages(list.id)}
-                  >
-                    <p>{list.namePackage}</p>
-                  </div>
-                ))}
+                    <div
+                      className="cursor-pointer hover:bg-gray-100 py-3 px-3 w-full"
+                      key={idx}
+                      onClick={() => handleSelectPackages(list.id)}
+                    >
+                      <p>{list.namePackage}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className="my-3 space-y-2">
@@ -402,7 +402,7 @@ const Whatsapp = () => {
               <button
                 type="submit"
                 disabled={disabledButton}
-                className="w-full text-white bg-blue-800 p-3 rounded-md"
+                className="w-full text-white bg-blue-800 p-4 rounded-md"
               >
                 <p
                   onClick={handleSendMessage}

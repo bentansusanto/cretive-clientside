@@ -46,8 +46,8 @@ const HeroSection = () => {
     ) : availability === false ? (
       <p className="text-[12px] text-red-500">Sorry domain unavailable</p>
     ) : (
-      error && (
-        <p className="text-[12px] text-red-500">Please input after 60 second</p>
+      domainError && (
+        <p className="text-[12px] text-red-500">Please refresh this website</p>
       )
     ));
 
@@ -83,7 +83,7 @@ const HeroSection = () => {
             </div>
             <div className="flex space-x-2">
               <div className="space-y-1">
-                <div className="p-2 rounded-md border border-[#CFCFCF] w-[100%]">
+                <div className="p-3 rounded-md border border-[#CFCFCF] w-[100%]">
                   <div className="flex items-center justify-between ">
                     <input
                       type="text"
@@ -119,7 +119,7 @@ const HeroSection = () => {
               <div>
                 <button
                   onClick={handleCheckDomain}
-                  className="bg-[#0049A5] px-4 py-2.5 text-white text-[14px] rounded-md"
+                  className="bg-[#0049A5] px-4 py-3 border-[#0049A5] border text-white text-[14px] rounded-md"
                 >
                   Check Domain
                 </button>
@@ -140,7 +140,7 @@ const HeroSection = () => {
             </div>
             <div className="flex space-x-2">
               <div className="space-y-1">
-                <div className="p-2 rounded-md border border-[#CFCFCF] w-[100%]">
+                <div className="p-3 rounded-md border border-[#CFCFCF] w-[100%]">
                   <div className="flex items-center justify-between">
                     <input
                       type="text"
@@ -176,7 +176,7 @@ const HeroSection = () => {
               <div>
                 <button
                   onClick={handleCheckDomain}
-                  className="bg-[#0049A5] px-4 py-2.5 text-white text-[14px] whitespace-nowrap rounded-md"
+                  className="bg-[#0049A5] px-4 py-3 border-[#0049A5] border font-semibold text-white text-[14px] whitespace-nowrap rounded-md"
                 >
                   Check Domain
                 </button>
@@ -205,7 +205,7 @@ const HeroSection = () => {
               </div>
               <div className="flex space-x-2">
                 <div className="space-y-1">
-                  <div className="p-3 rounded-md border border-[#CFCFCF] w-[100%]">
+                  <div className="p-3.5 rounded-md border border-[#CFCFCF] w-[100%]">
                     <div className="flex items-center justify-between">
                       <input
                         type="text"
@@ -241,7 +241,7 @@ const HeroSection = () => {
                 <div>
                   <button
                     onClick={handleCheckDomain}
-                    className="bg-[#0049A5] px-5 py-3 text-white text-[15px] rounded-md"
+                    className="bg-[#0049A5] px-5 py-4 font-semibold text-white text-[15px] rounded-md"
                   >
                     Check Domain
                   </button>
@@ -261,16 +261,5 @@ const HeroSection = () => {
     </div>
   );
 };
-
-// export const getServerSideProps = async (context: any) => {
-//   // Get IP address from the request
-//   const ipAddress = context.req.headers['x-forwarded-for'] || context.req.connection.remoteAddress;
-
-//   return {
-//     props: {
-//       ipAddress,
-//     },
-//   };
-// };
 
 export default HeroSection;

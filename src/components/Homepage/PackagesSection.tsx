@@ -71,7 +71,7 @@ const PackagesSection = () => {
                   </div>
                   <button
                     onClick={() => handleRoute(list.id)}
-                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                    className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                   >
                     Beli Sekarang
                   </button>
@@ -101,7 +101,7 @@ const PackagesSection = () => {
                   </div>
                   <button
                     onClick={() => handleRoute(list.id)}
-                    className="bg-blue-800 p-3 w-full rounded-md text-white"
+                    className="bg-blue-800 p-4 font-semibold w-full rounded-md text-white"
                   >
                     Beli Sekarang
                   </button>
@@ -161,7 +161,7 @@ const PackagesSection = () => {
                   </div>
                   <button
                     onClick={() => handleRoute(list.id)}
-                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                    className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                   >
                     Beli Sekarang
                   </button>
@@ -191,7 +191,7 @@ const PackagesSection = () => {
                   </div>
                   <button
                     onClick={() => handleRoute(list.id)}
-                    className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                    className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                   >
                     Beli Sekarang
                   </button>
@@ -255,7 +255,7 @@ const PackagesSection = () => {
                     </div>
                     <button
                       onClick={() => handleRoute(list.id)}
-                      className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                     >
                       Beli Sekarang
                     </button>
@@ -285,7 +285,7 @@ const PackagesSection = () => {
                     </div>
                     <button
                       onClick={() => handleRoute(list.id)}
-                      className="bg-[#0049A5] p-3 w-full rounded-md text-white"
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                     >
                       Beli Sekarang
                     </button>

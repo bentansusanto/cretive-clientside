@@ -32,7 +32,7 @@ const TestimoniSection = () => {
             <p className="text-gray-300 mt-3 text-[15px]">
               {dataTestimoni.description}
             </p>
-            <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+            <button className="bg-[#0049A5] mt-10 px-5 py-4 font-semibold text-white text-[15px] rounded-md">
               <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
@@ -111,7 +111,7 @@ const TestimoniSection = () => {
             <p className="text-gray-300 mt-3 text-[15px]">
               {dataTestimoni.description}
             </p>
-            <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+            <button className="bg-[#0049A5] mt-10 px-5 py-4 font-semibold text-white text-[15px] rounded-md">
               <Link href={`#package`}>Order Sekarang</Link>
             </button>
           </div>
@@ -184,7 +184,7 @@ const TestimoniSection = () => {
               <p className="text-gray-400 mt-3 w-[70%] text-[15px]">
                 {dataTestimoni.description}
               </p>
-              <button className="bg-[#0049A5] mt-10 px-5 py-3 text-white text-[15px] rounded-md">
+              <button className="bg-[#0049A5] mt-10 px-5 py-4 font-semibold text-white text-[15px] rounded-md">
                 <Link href={`#package`}>Order Sekarang</Link>
               </button>
             </div>

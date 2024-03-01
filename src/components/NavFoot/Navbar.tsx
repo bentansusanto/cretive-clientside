@@ -42,8 +42,10 @@ const Navbar = () => {
           </div>
           <ul
             className={` ${
-              open ? "h-auto top-16  px-3 py-5" : " opacity-10 -top-[60vh]"
-            } bg-white space-y-8 w-full absolute transition-all ease-linear duration-500`}
+              open
+                ? "h-auto px-3 left-0 py-5 w-full"
+                : " opacity-10 -left-[100vw] w-0"
+            } bg-white space-y-8  absolute transition-all ease-linear duration-500`}
           >
             {navData.map((list, idx) => (
               <li
@@ -53,7 +55,7 @@ const Navbar = () => {
                 <Link href={list.link}>{list.page}</Link>
               </li>
             ))}
-            <button className="bg-[#0049A5] w-full px-5 py-3 text-white text-[15px] rounded-lg">
+            <button className="bg-[#0049A5] w-full px-5 py-4 font-semibold text-white text-[15px] rounded-lg">
               Order Sekarang
             </button>
           </ul>
@@ -70,7 +72,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <button className="bg-[#0049A5] px-5 py-2.5 text-white text-[14px] rounded-lg">
+          <button className="bg-[#0049A5] px-5 py-3 text-white text-[14px] rounded-lg">
             Order Sekarang
           </button>
         </div>
@@ -87,7 +89,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <button className="bg-[#0049A5] px-5 py-3 text-white text-[15px] rounded-lg">
+            <button className="bg-[#0049A5] px-5 py-4 text-white text-[15px] rounded-lg">
               Order Sekarang
             </button>
           </div>
