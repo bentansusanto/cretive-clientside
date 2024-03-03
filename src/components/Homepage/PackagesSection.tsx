@@ -240,11 +240,18 @@ const PackagesSection = () => {
                     <p className="text-[15px] font-semibold">
                       {list.namePackage}
                     </p>
-                    <h4 className="text-2xl font-semibold text-[#007EFF]">
-                      {" "}
-                      {idx === 2 && <span className="text-2xl">Mulai </span>}
-                      {rupiah(list.price)}
-                    </h4>
+                    <div className="space-y-2">
+                      <h4 className="text-red-500 line-through animate-pulse">
+                        {rupiah(list.beforeprice)}
+                      </h4>
+                      <h4 className="text-2xl font-semibold text-gray-700">
+                        {" "}
+                        {list.namePackage === "Web Application" && (
+                          <span className="text-lg">Mulai </span>
+                        )}
+                        {rupiah(list.price)}
+                      </h4>
+                    </div>
                     <div className="space-y-3">
                       {list.benefit.map((list, idx) => (
                         <div key={idx} className="flex space-x-3">

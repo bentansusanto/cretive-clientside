@@ -88,7 +88,8 @@ export const dataPackage: PackageProps = {
       desc: "Landingpage sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas",
       revision: "Unlimited Revisi",
       duration: "7 hari pengerjaan",
-      price: 999900,
+      beforeprice: 999900,
+      price: 699900,
       benefit: [
         "Pengerjaan 7 hari",
         "Unlimited Revisi",
@@ -109,7 +110,8 @@ export const dataPackage: PackageProps = {
       desc: "Web Company Profile sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas.",
       revision: "Unlimited Revisi",
       duration: "15 hari",
-      price: 2599900,
+      beforeprice: 2599900,
+      price: 1799900,
       benefit: [
         "Pengerjaan 15 hari",
         "Desain  Premium",
@@ -130,7 +132,8 @@ export const dataPackage: PackageProps = {
       desc: "Web Application sangat cocok untuk melakukan pemasaran, pemesanan otomatis, dan membuat sistem otomatis",
       revision: "3x Revisi",
       duration: "1 - 3 Bulan",
-      price: 9900000,
+      beforeprice: 9900000,
+      price: 7900000,
       benefit: [
         "Pengerjaan 1 - 3 bulan",
         "Revisi maksimal 3 kali",

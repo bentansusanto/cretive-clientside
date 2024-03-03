@@ -49,6 +49,7 @@ export type PackagesWeb = {
   duration: string;
   revision: string;
   price: number | any;
+  beforeprice: number | any;
   benefit: string[];
 };
 
