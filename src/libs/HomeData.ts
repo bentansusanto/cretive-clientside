@@ -88,6 +88,7 @@ export const dataPackage: PackageProps = {
       desc: "Landingpage sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas",
       revision: "Unlimited Revisi",
       duration: "7 hari pengerjaan",
+      link: "https://shopee.co.id/Jasa-Pembuatan-Website-Jualan-Conversi-Tinggi-i.671074713.25119051522?sp_atk=f8036651-e45f-4c6f-93ee-73a169b75d78&xptdk=f8036651-e45f-4c6f-93ee-73a169b75d78",
       beforeprice: 999900,
       price: 799900,
       benefit: [
@@ -110,6 +111,7 @@ export const dataPackage: PackageProps = {
       desc: "Web Company Profile sangat cocok untuk melakukan memasarkan product/jasa secara online untuk menjangkau customer lebih luas.",
       revision: "Unlimited Revisi",
       duration: "15 hari",
+      link: "https://shopee.co.id/Website-Company-Profile-i.671074713.24369092494?sp_atk=ef5605cc-5ad9-4abc-ac65-0a2878e96c55&xptdk=ef5605cc-5ad9-4abc-ac65-0a2878e96c55",
       beforeprice: 2599900,
       price: 2299900,
       benefit: [
@@ -132,6 +134,7 @@ export const dataPackage: PackageProps = {
       desc: "Web Application sangat cocok untuk melakukan pemasaran, pemesanan otomatis, dan membuat sistem otomatis",
       revision: "3x Revisi",
       duration: "1 - 3 Bulan",
+      link: "",
       beforeprice: 9900000,
       price: 9500000,
       benefit: [

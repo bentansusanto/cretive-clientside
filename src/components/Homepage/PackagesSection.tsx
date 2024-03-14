@@ -1,6 +1,7 @@
 import { rupiah } from "@/config/Currency";
 import { Mobile } from "@/config/MediaQuery";
 import { dataPackage } from "@/libs/HomeData";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { GoCheckCircle } from "react-icons/go";
@@ -69,6 +70,20 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
+                  {
+                    list.namePackage === 'Web Application' ? (<button
+                      onClick={() => handleRoute(list.id)}
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                    >
+                      Konsultasi Sekarang
+                    </button>) : (<button
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                    >
+                      <Link href={list.link}>
+                        Beli Sekarang
+                      </Link>
+                    </button>)
+                  }
                   <button
                     onClick={() => handleRoute(list.id)}
                     className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
@@ -159,12 +174,20 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  <button
-                    onClick={() => handleRoute(list.id)}
-                    className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                  >
-                    Beli Sekarang
-                  </button>
+                  {
+                    list.namePackage === 'Web Application' ? (<button
+                      onClick={() => handleRoute(list.id)}
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                    >
+                      Konsultasi Sekarang
+                    </button>) : (<button
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                    >
+                      <Link href={list.link}>
+                        Beli Sekarang
+                      </Link>
+                    </button>)
+                  }
                 </div>
               ))}
             </div>
@@ -260,12 +283,20 @@ const PackagesSection = () => {
                         </div>
                       ))}
                     </div>
-                    <button
+                    {
+                    list.namePackage === 'Web Application' ? (<button
                       onClick={() => handleRoute(list.id)}
                       className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                     >
-                      Beli Sekarang
-                    </button>
+                      Konsultasi Sekarang
+                    </button>) : (<button
+                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                    >
+                      <Link href={list.link}>
+                        Beli Sekarang
+                      </Link>
+                    </button>)
+                  } 
                   </div>
                 ))}
               </div>

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { link } from 'fs';
 
 export interface LayoutProps {
   children: ReactNode;
@@ -50,6 +51,7 @@ export type PackagesWeb = {
   revision: string;
   price: number | any;
   beforeprice: number | any;
+  link: string | any;
   benefit: string[];
 };
 

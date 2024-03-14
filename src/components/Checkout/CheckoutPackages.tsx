@@ -224,9 +224,9 @@ const CheckoutPackage = () => {
               <div className="bg-white space-y-8 p-5 shadow-md w-[100%] h-auto">
                 <div className="flex items-center justify-between">
                   <p className="text-[16px] font-medium">
-                  {packageData?.id
-                              ? packageData.namePackage
-                              : maintenanceData?.namePackage}
+                    {packageData?.id
+                      ? packageData.namePackage
+                      : maintenanceData?.namePackage}
                   </p>
                   <p className="text-[16px] font-semibold text-gray-500">
                     {packagePrice()}
@@ -234,9 +234,7 @@ const CheckoutPackage = () => {
                 </div>
                 <div className="space-y-3">
                   <p className="text-[14px] font-normal text-gray-500">
-                  {packageData?.id
-                              ? packageData.desc
-                              : maintenanceData?.desc}
+                    {packageData?.id ? packageData.desc : maintenanceData?.desc}
                   </p>
                   <div className="space-y-3">
                     {/* Revision dan Duration */}
@@ -244,17 +242,17 @@ const CheckoutPackage = () => {
                       <div className="flex items-center space-x-2">
                         <TbReload className="text-[16px]" />
                         <p className="text-[13px] font-semibold text-gray-500">
-                        {packageData?.id
-                              ? packageData.revision
-                              : maintenanceData?.revision}
+                          {packageData?.id
+                            ? packageData.revision
+                            : maintenanceData?.revision}
                         </p>
                       </div>
                       <div className="flex items-center space-x-2">
                         <PiTimerBold className="text-[16px]" />
                         <p className="text-[13px] font-semibold text-gray-500">
-                        {packageData?.id
-                              ? packageData.duration
-                              : maintenanceData?.duration}
+                          {packageData?.id
+                            ? packageData.duration
+                            : maintenanceData?.duration}
                         </p>
                       </div>
                     </div>
@@ -485,9 +483,9 @@ const CheckoutPackage = () => {
                 <div className="sticky space-y-8 top-5 bg-white shadow-md p-5 rounded-md w-[40vw] h-auto">
                   <div className="flex items-center justify-between">
                     <p className="text-[16px] font-medium">
-                    {packageData?.id
-                              ? packageData.namePackage
-                              : maintenanceData?.namePackage}
+                      {packageData?.id
+                        ? packageData.namePackage
+                        : maintenanceData?.namePackage}
                     </p>
                     <p className="text-[16px] font-semibold text-gray-500">
                       {packagePrice()}
@@ -495,9 +493,9 @@ const CheckoutPackage = () => {
                   </div>
                   <div className="space-y-3">
                     <p className="text-[15px] font-normal text-gray-500">
-                    {packageData?.id
-                              ? packageData.desc
-                              : maintenanceData?.desc}
+                      {packageData?.id
+                        ? packageData.desc
+                        : maintenanceData?.desc}
                     </p>
                     <div className="space-y-3">
                       {/* Revision dan Duration */}

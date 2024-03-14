@@ -12,10 +12,10 @@ export const paymentMethod:PaymentMethod[] = [
       nameOwner: "Benny Tan Susanto",
       noRek: "0607992462"
   },
-  {
-      id: generateCustomId(),
-      bankName: "DANA",
-      nameOwner: "Benny Tan Susanto",
-      noRek: "089604276162"
-  }
+    {
+        id: generateCustomId(),
+        bankName: "DANA",
+        nameOwner: "Benny Tan Susanto",
+        noRek: "089604276162"
+    }
 ]
