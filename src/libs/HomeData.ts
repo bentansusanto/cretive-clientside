@@ -90,7 +90,7 @@ export const dataPackage: PackageProps = {
       duration: "7 hari pengerjaan",
       link: "https://shopee.co.id/Jasa-Pembuatan-Website-Jualan-Conversi-Tinggi-i.671074713.25119051522?sp_atk=f8036651-e45f-4c6f-93ee-73a169b75d78&xptdk=f8036651-e45f-4c6f-93ee-73a169b75d78",
       beforeprice: 999900,
-      price: 799900,
+      price: 899900,
       benefit: [
         "Pengerjaan 7 hari",
         "Unlimited Revisi",
