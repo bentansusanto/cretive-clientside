@@ -89,7 +89,7 @@ export const dataPackage: PackageProps = {
       revision: "Unlimited Revisi",
       duration: "7 hari pengerjaan",
       beforeprice: 999900,
-      price: 699900,
+      price: 799900,
       benefit: [
         "Pengerjaan 7 hari",
         "Unlimited Revisi",
@@ -111,7 +111,7 @@ export const dataPackage: PackageProps = {
       revision: "Unlimited Revisi",
       duration: "15 hari",
       beforeprice: 2599900,
-      price: 1799900,
+      price: 2299900,
       benefit: [
         "Pengerjaan 15 hari",
         "Desain  Premium",
