@@ -133,7 +133,7 @@ export const dataPackage: PackageProps = {
       revision: "3x Revisi",
       duration: "1 - 3 Bulan",
       beforeprice: 9900000,
-      price: 7900000,
+      price: 9500000,
       benefit: [
         "Pengerjaan 1 - 3 bulan",
         "Revisi maksimal 3 kali",
