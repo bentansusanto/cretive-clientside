@@ -59,9 +59,18 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-2xl font-semibold text-[#007EFF]">
-                    {rupiah(list.price)}
-                  </h4>
+                  <div className="space-y-2">
+                      <h4 className="text-red-500 line-through animate-pulse">
+                        {rupiah(list.beforeprice)}
+                      </h4>
+                      <h4 className="text-2xl font-semibold text-gray-700">
+                        {" "}
+                        {list.namePackage === "Web Application" && (
+                          <span className="text-lg">Mulai </span>
+                        )}
+                        {rupiah(list.price)}
+                      </h4>
+                    </div>
                   <div className="space-y-3">
                     {list.benefit.map((list, idx) => (
                       <div key={idx} className="flex space-x-3">
@@ -70,26 +79,18 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  {
-                    list.namePackage === 'Web Application' ? (<button
+                  {list.namePackage === "Web Application" ? (
+                    <button
                       onClick={() => handleRoute(list.id)}
                       className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                     >
                       Konsultasi Sekarang
-                    </button>) : (<button
-                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                    >
-                      <Link href={list.link}>
-                        Beli Sekarang
-                      </Link>
-                    </button>)
-                  }
-                  <button
-                    onClick={() => handleRoute(list.id)}
-                    className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                  >
-                    Beli Sekarang
-                  </button>
+                    </button>
+                  ) : (
+                    <button className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white">
+                      <Link href={list.link}>Beli Sekarang</Link>
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -103,7 +104,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-2xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-black">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -163,9 +164,18 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-2xl font-semibold text-[#007EFF]">
-                    {rupiah(list.price)}
-                  </h4>
+                  <div className="space-y-2">
+                    <h4 className="text-red-500 line-through animate-pulse">
+                      {rupiah(list.beforeprice)}
+                    </h4>
+                    <h4 className="text-2xl font-semibold text-gray-700">
+                      {" "}
+                      {list.namePackage === "Web Application" && (
+                        <span className="text-lg">Mulai </span>
+                      )}
+                      {rupiah(list.price)}
+                    </h4>
+                  </div>
                   <div className="space-y-3">
                     {list.benefit.map((list, idx) => (
                       <div key={idx} className="flex space-x-3">
@@ -174,20 +184,18 @@ const PackagesSection = () => {
                       </div>
                     ))}
                   </div>
-                  {
-                    list.namePackage === 'Web Application' ? (<button
+                  {list.namePackage === "Web Application" ? (
+                    <button
                       onClick={() => handleRoute(list.id)}
                       className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
                     >
                       Konsultasi Sekarang
-                    </button>) : (<button
-                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                    >
-                      <Link href={list.link}>
-                        Beli Sekarang
-                      </Link>
-                    </button>)
-                  }
+                    </button>
+                  ) : (
+                    <button className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white">
+                      <Link href={list.link}>Beli Sekarang</Link>
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -201,7 +209,7 @@ const PackagesSection = () => {
                   <p className="text-[15px] font-semibold">
                     {list.namePackage}
                   </p>
-                  <h4 className="text-2xl font-semibold text-[#007EFF]">
+                  <h4 className="text-2xl font-semibold text-black">
                     {rupiah(list.price)}
                   </h4>
                   <div className="space-y-3">
@@ -283,20 +291,18 @@ const PackagesSection = () => {
                         </div>
                       ))}
                     </div>
-                    {
-                    list.namePackage === 'Web Application' ? (<button
-                      onClick={() => handleRoute(list.id)}
-                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                    >
-                      Konsultasi Sekarang
-                    </button>) : (<button
-                      className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
-                    >
-                      <Link href={list.link}>
-                        Beli Sekarang
-                      </Link>
-                    </button>)
-                  } 
+                    {list.namePackage === "Web Application" ? (
+                      <button
+                        onClick={() => handleRoute(list.id)}
+                        className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white"
+                      >
+                        Konsultasi Sekarang
+                      </button>
+                    ) : (
+                      <button className="bg-[#0049A5] p-4 font-semibold w-full rounded-md text-white">
+                        <Link href={list.link}>Beli Sekarang</Link>
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>
@@ -310,7 +316,7 @@ const PackagesSection = () => {
                     <p className="text-[15px] font-semibold">
                       {list.namePackage}
                     </p>
-                    <h4 className="text-2xl font-semibold text-[#007EFF]">
+                    <h4 className="text-2xl font-semibold text-black">
                       {rupiah(list.price)}
                     </h4>
                     <div className="space-y-3">
