@@ -12,11 +12,11 @@ export const navData: NavProps[] = [
 export const footData: FootProps = {
   logo: "logo-cretive-agency.svg",
   quicklink: navData,
-  contact: ["cretivesoft@gmail.com", "Batam, Kepulauan Riau"],
+  contact: ["cretivesoft@gmail.com", "Jl. Raja Isa No. 10, Kota Batam"],
   webTemplate: [
     "UI Design",
     "Landingpage",
-    "Web Company Profile",  
+    "Web Company Profile",
     "Web Application",
   ],
   package: ["Landingpage", "Web Company Profile", "Web Application"],
